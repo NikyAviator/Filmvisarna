@@ -1,0 +1,47 @@
+/* BODY and positioning*/
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation Bar */
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.nav-item {
+  padding: 0 18px;
+}
+
+/* Padding for the container */
+.container {
+  padding: 3% 5%;
+}
+
+/* Title container (where the movies are)*/
+#title {
+  background-color: #ccc7c7;
+}
+
+/* H1 and H2*/
+h1 {
+  font-weight: bold;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  padding-bottom: 20px;
+}
+
+/* Testimonials, the red color is the danger color in BS5*/
+#testimonials {
+  text-align: center;
+  background-color: #dc3545;
+  color: #fff;
+}
+/* Carousel padding*/
+.carousel-item {
+  padding: 5% 10%;
+}
