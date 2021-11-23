@@ -22,11 +22,13 @@ body {
 #title {
   background-image: url("/frontend/images/1552.jpg");
   background-color: #cccccc;
+  background-size: cover;
 }
 
 /* H1 and H2*/
 h1 {
   font-weight: bold;
+  color: aliceblue;
 }
 h2 {
   font-family: 'Montserrat', sans-serif;
