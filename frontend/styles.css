@@ -19,8 +19,8 @@ body {
 }
 
 /* Title container (where the movies are)*/
-#title {
-  background-image: url("/frontend/images/1552.jpg");
+.title {
+  background-image: url("/images/1552.jpg");
   background-color: #cccccc;
   background-size: cover;
 }
@@ -38,6 +38,12 @@ h2 {
   padding-bottom: 20px;
 }
 
+/* Tim : Without this focusBody will not be visable*/
+#focusBody {
+  text-align: center;
+  background-color: #dc3545;
+  color: #fff;
+}
 /* Testimonials, the red color is the danger color in BS5*/
 #testimonials {
   text-align: center;
