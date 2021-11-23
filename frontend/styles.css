@@ -20,7 +20,8 @@ body {
 
 /* Title container (where the movies are)*/
 #title {
-  background-color: #ccc7c7;
+  background-image: url("/frontend/images/1552.jpg");
+  background-color: #cccccc;
 }
 
 /* H1 and H2*/
