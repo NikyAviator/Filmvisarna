@@ -1,234 +1,249 @@
 [
   {
-    "title": "Test movie #1",
+    "id": 1,
+    "title": "Total Recall",
     "productionCountries": [
-      "Italien",
+      "Mexico",
       "USA"
     ],
-    "productionYear": 2017,
-    "length": 132,
-    "genre": "Drama",
-    "distributor": "UIP",
+    "productionYear": 1990,
+    "length": 113,
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Thriller"
+    ],
+    "distributor": "TriStar Pictures",
     "language": "engelska",
     "subtitles": "svenska",
-    "director": "Luca Guadagnino",
+    "director": "Paul Verhoeven",
     "actors": [
-      "Armie Hammer",
-      "Timothée Chalamet",
-      "Michael Stuhlbarg"
+      "Arnold Schwarzenegger",
+      "Sharon Stone",
+      "Michael Ironside"
     ],
-    "description": "<p> Blah blah film1.</p>",
+    "description": "Det är långt in i framtiden. Byggnadsarbetaren Douglas drömmer om att resa till Mars. Han beger sig till en minnesbank där man kan köpa minnen som implanteras i kroppen. Men någonting går väldigt fel, och Douglas personlighet börjar plötsligt förändras. Vem är han egentligen?",
     "images": [
-      "call-me-poster1.jpg",
-      "call-me-poster2.jpg"
+      "Poster-1.jpg"
     ],
     "youtubeTrailers": [
-      "Z9AYPxH5NTM"
+      "watch?v=WFMLGEHdIjE"
     ],
     "reviews": [
       {
         "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
+        "quote": "Schwarzenegger gör det igen, denna gång som rymdhjälte",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
+        "quote": "Årets bästa actionfilm",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
+        "quote": "Håll i hakan, det här är en Sci-Fi film före sin tid.",
         "stars": 4,
         "max": 5
       }
     ]
   },
   {
-    "title": "Test movie #2",
+    "id": 2,
+    "title": "Captain Marvel",
     "productionCountries": [
-      "Italien",
       "USA"
     ],
-    "productionYear": 2017,
-    "length": 132,
-    "genre": "Drama",
-    "distributor": "UIP",
+    "productionYear": 2019,
+    "length": 123,
+    "genre": [
+      "Action",
+      "Adventure"
+    ],
+    "distributor": "Disney Studios",
     "language": "engelska",
     "subtitles": "svenska",
-    "director": "Luca Guadagnino",
+    "director": "Anna Boden",
     "actors": [
-      "Armie Hammer",
-      "Timothée Chalamet",
-      "Michael Stuhlbarg"
+      "Brie Larson",
+      "Samuel L. Jackson",
+      "Ben Mendelsohn"
     ],
-    "description": "<p>Blah blah film2.</p>",
+    "description": "<p>Carol Denvers (Captain Marvel) gör entré i Marvel Cinematic Universe när en intergalaktisk konflikt är på intågande och hotar henne och alla andra på Jorden. Denna händelse är början på historien om en av de mäktigaste hjältarna i superhjältarnas universum.</p>",
     "images": [
-      "call-me-poster1.jpg",
-      "call-me-poster2.jpg"
+      "Poster-2.jpg"
     ],
     "youtubeTrailers": [
-      "Z9AYPxH5NTM"
+      "watch?v=Z1BCujX3pw8"
     ],
     "reviews": [
       {
         "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
+        "quote": "Brie Larson visar vart skåpet ska stå.",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
+        "quote": "En modern hjältesaga med humor och djup.",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Norm Macdonald",
+        "quote": "Wow.",
+        "stars": 5,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "The Matrix",
+    "productionCountries": [
+      "Australien",
+      "USA"
+    ],
+    "productionYear": 1999,
+    "length": 136,
+    "genre": [
+      "Sci-Fi",
+      "Action"
+    ],
+    "distributor": "Warner Bros",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Lana Wachowski",
+    "actors": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss"
+    ],
+    "description": "<p>När en vacker främling leder datorhackeren Neo till en förbjuden undre värld, upptäcker han den chockerande sanningen – det liv han känner till är en simulation skapad av ond cyberintelligens.</p>",
+    "images": [
+      "Poster-3.jpg"
+    ],
+    "youtubeTrailers": [
+      "watch?v=vKQi3bBA1y8"
+    ],
+    "reviews": [
+      {
+        "source": "Sydsvenskan",
+        "quote": "Höjer ribban för alla framtida Action-filmer",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "Matrix bjuder på effekter som aldrig tidigare skådats",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
+        "quote": "Ett mästerverk.",
         "stars": 4,
         "max": 5
       }
     ]
   },
   {
-    "title": "Test movie #3",
+    "id": 4,
+    "title": "Spiderman Homecoming",
     "productionCountries": [
       "Italien",
       "USA"
     ],
     "productionYear": 2017,
-    "length": 132,
-    "genre": "Drama",
-    "distributor": "UIP",
+    "length": 133,
+    "genre": [
+      "Action",
+      "Adventure"
+    ],
+    "distributor": "Columbia Pictures",
     "language": "engelska",
     "subtitles": "svenska",
-    "director": "Luca Guadagnino",
+    "director": "Jon Watts",
     "actors": [
-      "Armie Hammer",
-      "Timothée Chalamet",
-      "Michael Stuhlbarg"
+      "Tom Holland",
+      "Michael Keaton",
+      "Robert Downey Jr."
     ],
-    "description": "<p>Blah blah film3.</p>",
+    "description": "<p>Peter Parker som försöker leva ett vanligt liv som high school-student, samtidigt som bekämpar han brottslingar som superhjälten Spider-Man.</p>",
     "images": [
-      "call-me-poster1.jpg",
-      "call-me-poster2.jpg"
+      "Poster-4.jpg"
     ],
     "youtubeTrailers": [
-      "Z9AYPxH5NTM"
+      "watch?v=39udgGPyYMg"
     ],
     "reviews": [
       {
         "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
+        "quote": "Den perfekta Spiderman-filmen.",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
+        "quote": "Tom Holland är som gjord för att spela Spiderman.",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
+        "quote": "Ett actionäventyr för hela familjen.",
         "stars": 4,
         "max": 5
       }
     ]
   },
   {
-    "title": "Test movie #4",
+    "id": 5,
+    "title": "Shaft",
     "productionCountries": [
-      "Italien",
       "USA"
     ],
-    "productionYear": 2017,
-    "length": 132,
-    "genre": "Drama",
-    "distributor": "UIP",
+    "productionYear": 1971,
+    "length": 100,
+    "genre": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "distributor": "MGM",
     "language": "engelska",
     "subtitles": "svenska",
-    "director": "Luca Guadagnino",
+    "director": "Gordon Parks",
     "actors": [
-      "Armie Hammer",
-      "Timothée Chalamet",
-      "Michael Stuhlbarg"
+      "Richard Roundtree",
+      "Moses Gunn",
+      "Charles Cioffi"
     ],
-    "description": "<p>Blah blah film4</p>",
+    "description": "<p>Den coola privatdetektiven John Shaft blir anställd av en maffiaboss för att hitta och rädda hans kidnappade dotter.</p>",
     "images": [
-      "call-me-poster1.jpg",
-      "call-me-poster2.jpg"
+      "Poster-5.jpg"
     ],
     "youtubeTrailers": [
-      "Z9AYPxH5NTM"
+      "watch?v=T1ga1FgU10E"
     ],
     "reviews": [
       {
         "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
+        "quote": "En kult-klassiker fylld med odödliga repliker.",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
+        "quote": "Shaft är den tuffaste katten i stan.",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
-        "stars": 4,
-        "max": 5
-      }
-    ]
-  },
-  {
-    "title": "Test movie #5",
-    "productionCountries": [
-      "Italien",
-      "USA"
-    ],
-    "productionYear": 2017,
-    "length": 132,
-    "genre": "Drama",
-    "distributor": "UIP",
-    "language": "engelska",
-    "subtitles": "svenska",
-    "director": "Luca Guadagnino",
-    "actors": [
-      "Armie Hammer",
-      "Timothée Chalamet",
-      "Michael Stuhlbarg"
-    ],
-    "description": "<p>Blah blah film5.</p>",
-    "images": [
-      "call-me-poster1.jpg",
-      "call-me-poster2.jpg"
-    ],
-    "youtubeTrailers": [
-      "Z9AYPxH5NTM"
-    ],
-    "reviews": [
-      {
-        "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
-        "stars": 4,
-        "max": 5
-      },
-      {
-        "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
-        "stars": 5,
-        "max": 5
-      },
-      {
-        "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
+        "quote": "En hårdkokt kriminalfilm som inte får missas.",
         "stars": 4,
         "max": 5
       }

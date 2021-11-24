@@ -98,12 +98,12 @@ async function displaySearchResult(movies) {
   html += '<div class="row gy-4">';
   let x = 1;
 
-  for (let { title, images } of movies) {
+  for (let { id, title, images } of movies) {
 
     html += `
     <div class="col-md-4 ml-auto">
     <a href="#film-${x}">
-    <img src="images/The_Matrix_Poster.jpg" alt="" height="75%" width="auto" />
+    <img src="images/Poster-${id}.jpg" alt="" height="75%" width="auto" />
     </a>
     </div>
     `;
