@@ -2,588 +2,588 @@
   {
     "id": 1,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-01",
     "time": "15.00"
   },
   {
     "id": 2,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Matrix",
     "date": "2021-12-01",
     "time": "18.00"
   },
   {
     "id": 3,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-01",
     "time": "21.00"
   },
   {
     "id": 4,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-02",
     "time": "15.00"
   },
   {
     "id": 5,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Shaft",
     "date": "2021-12-02",
     "time": "18.00"
   },
   {
     "id": 6,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-02",
     "time": "21.00"
   },
   {
     "id": 7,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-03",
     "time": "15.00"
   },
   {
     "id": 8,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Captain Marvel",
     "date": "2021-12-03",
-    "time": "15.00"
+    "time": "18.00"
   },
   {
     "id": 9,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-03",
-    "time": "18.00"
+    "time": "21.00"
   },
   {
     "id": 10,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-04",
-    "time": "21.00"
+    "time": "15.00"
   },
   {
     "id": 11,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-04",
-    "time": "15.00"
+    "time": "18.00"
   },
   {
     "id": 12,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-04",
-    "time": "18.00"
+    "time": "21.00"
   },
   {
     "id": 13,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-05",
-    "time": "21.00"
+    "time": "15.00"
   },
   {
     "id": 14,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Total Recall",
     "date": "2021-12-05",
-    "time": "15.00"
+    "time": "18.00"
   },
   {
     "id": 15,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-05",
-    "time": "18.00"
+    "time": "21.00"
   },
   {
     "id": 16,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-06",
-    "time": "21.00"
+    "time": "15.00"
   },
   {
     "id": 17,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Matrix",
     "date": "2021-12-06",
-    "time": "15.00"
+    "time": "18.00"
   },
   {
     "id": 18,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-06",
-    "time": "18.00"
+    "time": "21.00"
   },
   {
     "id": 19,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-07",
-    "time": "21.00"
+    "time": "15.00"
   },
   {
     "id": 20,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Shaft",
     "date": "2021-12-07",
-    "time": "15.00"
+    "time": "18.00"
   },
   {
     "id": 21,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-07",
-    "time": "18.00"
+    "time": "21.00"
   },
   {
     "id": 22,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-08",
-    "time": "21.00"
+    "time": "15.00"
   },
   {
     "id": 23,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Captain Marvel",
     "date": "2021-12-08",
-    "time": "15.00"
+    "time": "18.00"
   },
   {
     "id": 24,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-08",
-    "time": "18.00"
+    "time": "21.00"
   },
   {
     "id": 25,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
-    "date": "2021-12-09",
-    "time": "21.00"
-  },
-  {
-    "id": 26,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-09",
     "time": "15.00"
   },
   {
-    "id": 27,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "id": 26,
+    "auditorium": "Lilla Salongen",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-09",
     "time": "18.00"
   },
   {
-    "id": 28,
+    "id": 27,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
-    "date": "2021-12-10",
+    "film": "Matrix",
+    "date": "2021-12-09",
     "time": "21.00"
   },
   {
-    "id": 29,
+    "id": 28,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
+    "date": "2021-12-10",
+    "time": "15.00"
+  },
+  {
+    "id": 29,
+    "auditorium": "Lilla Salongen",
+    "film": "Total Recall",
     "date": "2021-12-10",
     "time": "18.00"
   },
   {
     "id": 30,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-10",
     "time": "21.00"
   },
   {
     "id": 31,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-11",
     "time": "15.00"
   },
   {
     "id": 32,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Matrix",
     "date": "2021-12-11",
     "time": "18.00"
   },
   {
     "id": 33,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-11",
     "time": "21.00"
   },
   {
     "id": 34,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-12",
     "time": "15.00"
   },
   {
     "id": 35,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Shaft",
     "date": "2021-12-12",
     "time": "18.00"
   },
   {
     "id": 36,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-12",
     "time": "21.00"
   },
   {
     "id": 37,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-13",
     "time": "15.00"
   },
   {
     "id": 38,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Captain Marvel",
     "date": "2021-12-13",
     "time": "18.00"
   },
   {
     "id": 39,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-13",
     "time": "21.00"
   },
   {
     "id": 40,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-14",
     "time": "15.00"
   },
   {
     "id": 41,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-14",
     "time": "18.00"
   },
   {
     "id": 42,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-14",
     "time": "21.00"
   },
   {
     "id": 43,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-15",
     "time": "15.00"
   },
   {
     "id": 44,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Total Recall",
     "date": "2021-12-15",
     "time": "18.00"
   },
   {
     "id": 45,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-15",
     "time": "21.00"
   },
   {
     "id": 46,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-16",
     "time": "15.00"
   },
   {
     "id": 47,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Matrix",
     "date": "2021-12-16",
     "time": "18.00"
   },
   {
     "id": 48,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-16",
     "time": "21.00"
   },
   {
     "id": 49,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-17",
     "time": "15.00"
   },
   {
     "id": 50,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Shaft",
     "date": "2021-12-17",
     "time": "18.00"
   },
   {
     "id": 51,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-17",
     "time": "21.00"
   },
   {
     "id": 52,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-18",
     "time": "15.00"
   },
   {
     "id": 53,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Captain Marvel",
     "date": "2021-12-18",
     "time": "18.00"
   },
   {
     "id": 54,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-18",
     "time": "21.00"
   },
   {
     "id": 55,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-19",
     "time": "15.00"
   },
   {
     "id": 56,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-19",
     "time": "18.00"
   },
   {
     "id": 57,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-19",
     "time": "21.00"
   },
   {
     "id": 58,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-20",
     "time": "15.00"
   },
   {
     "id": 59,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Total Recall",
     "date": "2021-12-20",
     "time": "18.00"
   },
   {
     "id": 60,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-20",
     "time": "21.00"
   },
   {
     "id": 61,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-21",
     "time": "15.00"
   },
   {
     "id": 62,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Matrix",
     "date": "2021-12-21",
     "time": "18.00"
   },
   {
     "id": 63,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-21",
     "time": "21.00"
   },
   {
     "id": 64,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-22",
     "time": "15.00"
   },
   {
     "id": 65,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Shaft",
     "date": "2021-12-22",
     "time": "18.00"
   },
   {
     "id": 66,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-22",
     "time": "21.00"
   },
   {
     "id": 67,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-23",
     "time": "15.00"
   },
   {
     "id": 68,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Captain Marvel",
     "date": "2021-12-23",
     "time": "18.00"
   },
   {
     "id": 69,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-23",
     "time": "21.00"
   },
   {
     "id": 70,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-24",
     "time": "15.00"
   },
   {
     "id": 71,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-24",
     "time": "18.00"
   },
   {
     "id": 72,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-24",
     "time": "21.00"
   },
   {
     "id": 73,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-25",
     "time": "15.00"
   },
   {
     "id": 74,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Total Recall",
     "date": "2021-12-25",
     "time": "18.00"
   },
   {
     "id": 75,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Shaft",
     "date": "2021-12-25",
     "time": "21.00"
   },
   {
     "id": 76,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-26",
     "time": "15.00"
   },
   {
     "id": 77,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Matrix",
     "date": "2021-12-26",
     "time": "18.00"
   },
   {
     "id": 78,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Captain Marvel",
     "date": "2021-12-26",
     "time": "21.00"
   },
   {
     "id": 79,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-27",
     "time": "15.00"
   },
   {
     "id": 80,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Shaft",
     "date": "2021-12-27",
     "time": "18.00"
   },
   {
     "id": 81,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Spiderman: Homecoming",
     "date": "2021-12-27",
     "time": "21.00"
   },
   {
     "id": 82,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Matrix",
     "date": "2021-12-28",
     "time": "15.00"
   },
   {
     "id": 83,
-    "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "auditorium": "Lilla Salongen",
+    "film": "Captain Marvel",
     "date": "2021-12-28",
     "time": "18.00"
   },
   {
     "id": 84,
     "auditorium": "Stora Salongen",
-    "film": "Call me by your name",
+    "film": "Total Recall",
     "date": "2021-12-28",
     "time": "21.00"
   }
