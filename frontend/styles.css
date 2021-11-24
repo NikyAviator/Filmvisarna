@@ -20,7 +20,7 @@ body {
 
 /* Title container (where the movies are)*/
 .title {
-  background-image: url("/images/1552.jpg");
+  background-image: url('/images/1552.jpg');
   background-color: #cccccc;
   background-size: cover;
 }
@@ -47,10 +47,9 @@ h2 {
 /* Testimonials, the red color is the danger color in BS5*/
 #testimonials {
   text-align: center;
-  background-color: #dc3545;
   color: #fff;
 }
-/* Carousel padding*/
+/* Carousel (testimonials) padding*/
 .carousel-item {
   padding: 5% 10%;
 }
