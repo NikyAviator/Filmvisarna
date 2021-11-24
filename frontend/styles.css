@@ -9,6 +9,7 @@ body {
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
 }
+
 .nav-item {
   padding: 0 18px;
 }
@@ -52,4 +53,17 @@ h2 {
 /* Carousel (testimonials) padding*/
 .carousel-item {
   padding: 5% 10%;
+}
+
+#anton-pic {
+  border-radius: 50%;
+}
+#sara-pic {
+  border-radius: 50%;
+}
+#gustav-pic {
+  border-radius: 50%;
+}
+#tim-pic {
+  border-radius: 50%;
 }
