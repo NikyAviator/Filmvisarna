@@ -44,6 +44,7 @@ function mainPage() {
 async function focusMovie(id) {
 
   let result = await (await fetch('/json/movies.json')).json();
+  let shows = await (await fetch('/json/shows.json')).json();
 
   if (result.length === 0) {
     alert.log("An error occurred trying to load movies data.");
@@ -52,14 +53,24 @@ async function focusMovie(id) {
 
   // Här kan man ändra "sidan" när man klickat på en poster och innehållet visas.
   let film = result[id - 1];
+  let booking = shows[id - 1];
+
   $('.mainContent').html(`
-    <h1 style="color:white;">Från JSON info</h1>
+
+    <h1 style="color:white;">${film.title}</h1>
     <p style="color:white;">t.ex om man klickat en på poster på <a href="  https://www.filmstaden.se/film/NCG106319/ghostbusters-afterlife"> Link </a></p>
     <h2 style="color:white;>${film.title}</h2>
-    <pstyle="color:white;>${film.description}</p>
-    <a href="#booking" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Book showing</a>
-  `);
+    <p style="color:white;>${film.description}</p>
+    <img style="position:left" src="${film.images}">
+    <a href="#booking" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">show</a>
+
+   <a href="#booking1" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+   ${booking.auditorium}<br>${booking.date}<br>${booking.time}</a>
+    `);
+
 }
+
+
 
 // Om man klickat på booking knappen innuit en films sida så hamnar man 
 // på booking sidan - ingen logiken ännu , ville bara visa hur jag expanderar på 
@@ -67,7 +78,8 @@ async function focusMovie(id) {
 async function bookingPage() {
   // Här kan man ändra "sidan" när man klickat på en poster och innehållet visas.
   $('.mainContent').html(`
-<h1 style="color:white;">WIP booking area</h1>
+<h1 style="color:white;">Presenting all shows for</h1>
+<h1 style="color:white;"> ${film.title}</h1>
 <p style="color:white;"> Vi kanske kan visa visningar och biosalarna här </p>
   `);
 }
