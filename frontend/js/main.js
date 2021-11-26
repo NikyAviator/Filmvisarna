@@ -49,20 +49,59 @@ async function focusMovie(id) {
   // Här kan man ändra "sidan" när man klickat på en poster och innehållet visas.
   let film = result[id - 1];
   let booking = shows[id - 1];
-
+ 
   $('.mainContent').html(`
 
-    <h1 style="color:white;">${film.title}</h1>
-    <p style="color:white;">t.ex om man klickat en på poster på <a href="  https://www.filmstaden.se/film/NCG106319/ghostbusters-afterlife"> Link </a></p>
-    <h2 style="color:white;>${film.title}</h2>
-    <p style="color:white;>${film.description}</p>
-    <img style="position:left" src="${film.images}">
-    <a href="#booking" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">show</a>
-
-   <a href="#booking1" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
-   ${booking.auditorium}<br>${booking.date}<br>${booking.time}</a>
+    <div class="container bg-dark text-white">
+    <div class="row">
+      <div class="col-3 me-auto">
+        <img src="/images/Poster-${ film.id }.jpg" class="img-fluid d-none d-sm-block">
+      </div>
+      <div class="col-md-7 col-xs-12 me-auto">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers}" title="YouTube video"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 me-md-auto mt-2">
+          <button type="button" class="btn btn-danger btn-lg mt-2">Se visningar</button>
+        </div>
+        <div class="col-md-7 me-auto mt-md-2">
+          <div class="movieinfo mt-5">
+            <h1>${film.title}</h1>
+            <p>${formatArray(film.genre)} | ${formatTime(film.length)} | Språk: ${film.language} | Text: ${film.subtitles}</p>
+            <div class="description">
+              <p>${film.description}</p>
+            </div>
+            <p>Regi: ${film.director}</p>
+            <p>Skådespelare: ${formatArray(film.actors)}</p>
+            <p>Distributör: ${film.distributor}</p>
+          </div>
+        </div>
+      </div>
+    </div>
     `);
 }
+function formatArray(data){
+  let dataString = "";
+  for (let x = 0; x < data.length; x++) {
+    dataString += data[x];
+    if (x < data.length - 1)
+      dataString += ", ";
+  }
+  return dataString;
+}
+function formatTime(minutes) {
+  let timeString = "";
+  let restMinutes = minutes % 60;
+  let hours = (minutes-restMinutes) / 60;
+  timeString = (hours > 0 ? hours + " tim " : "") + (restMinutes > 0 ? restMinutes + " min" : "");
+  return timeString;
+}
+/*<a href="#booking" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">show</a>
+   <a href="#booking1" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+   ${booking.auditorium}<br>${booking.date}<br>${booking.time}</a>*/
 
 // Om man klickat på booking knappen innuit en films sida så hamnar man
 // på booking sidan - ingen logiken ännu , ville bara visa hur jag expanderar på
