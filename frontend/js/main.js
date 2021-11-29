@@ -83,6 +83,9 @@ async function focusMovie(id) {
           </div>
         </div>
       </div>
+      <div class="row mt-4">
+        ${displayReviews(film.reviews)}
+      </div>
     </div>
     `);
 }
@@ -140,6 +143,24 @@ function formatTime(minutes) {
   let hours = (minutes - restMinutes) / 60;
   timeString = (hours > 0 ? hours + " tim " : "") + (restMinutes > 0 ? restMinutes + " min" : "");
   return timeString;
+}
+function displayReviews(review){
+  let html = "";
+  for (let i = 0; i < review.length; i++){
+    html += `<div class="col-md-4"> <div class="d-flex justify-content-center">`
+    for (let stars = 0; stars < review[i].max; stars++){
+      if (stars<=(review[i].stars-1)) {
+        html += `<img src="/images/icon-star-light.png" class="star">`
+      }
+      else {
+        html += `<img src="/images/icon-star-grey.png" class="star">`
+      }
+    }
+    html += `</div> <br> <p class="text-center">"${review[i].quote}"</p> 
+              <p class="text-end">- ${review[i].source}</p> </div>`
+  }
+  console.log(html);
+  return html;
 }
 
 
