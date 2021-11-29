@@ -58,11 +58,13 @@ async function focusMovie(id) {
     <div class="container bg-dark text-white">
     <div class="row">
       <div class="col-3 me-auto">
-        <img src="/images/Poster-${film.id}.jpg" class="img-fluid d-none d-sm-block">
+        <img src="/images/Poster-${film.id
+    }.jpg" class="img-fluid d-none d-sm-block">
       </div>
       <div class="col-md-7 col-xs-12 me-auto">
         <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers}" title="YouTube video"
+          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers
+    }" title="YouTube video"
             allowfullscreen></iframe>
         </div>
       </div>
@@ -73,7 +75,9 @@ async function focusMovie(id) {
         <div class="col-md-7 me-auto mt-md-2">
           <div class="movieinfo mt-5">
             <h1>${film.title}</h1>
-            <p>${formatArray(film.genre)} | ${formatTime(film.length)} | Språk: ${film.language} | Text: ${film.subtitles}</p>
+            <p>${formatArray(film.genre)} | ${formatTime(
+      film.length
+    )} | Språk: ${film.language} | Text: ${film.subtitles}</p>
             <div class="description">
               <p>${film.description}</p>
             </div>
@@ -93,21 +97,38 @@ async function focusMovie(id) {
 // Om man klickat på booking knappen innuit en films sida så hamnar man
 // på booking sidan - ingen logiken ännu , ville bara visa hur jag expanderar på
 // det vi redan har så det kanske är enklare att förstå.
-async function bookingPage() {
-  //let shows = await (await fetch('/json/shows.json')).json();
 
-  //let booking = shows[id - 1];
+//När man clickar på bookings knappaen hamnar på visningar
+async function bookingPage(id) {
+  let shows = await (await fetch('/json/shows.json')).json();
+  //let result = await (await fetch('/json/movies.json')).json();
 
+
+  let booking = shows[0];
+  //let film = result[id - 1];
 
   $('.mainContent').html(`
     <div class="container bg-dark text-white">
     <div class="row">
       <div class="col-3 me-auto">
-        <h1>Pick your showing</h1>
+        <h6>Showings for ... </h6>
         </div>
 
       <div class="col-md-7 col-xs-12 me-auto">
-        <div class="ratio ratio-16x9">
+      
+        
+        <a href="#booking" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">${booking.auditorium} ${booking.date} ${booking.time}</a>
+        <a href="#booking" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">${booking.auditorium} ${booking.date} ${booking.time}</a>
+        <a href="#booking" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">${booking.auditorium} ${booking.date} ${booking.time}</a>
+      
+      </div>
+      </div>
+    </div>
+  `);
+}
+
+//Designes screen and seats
+/*
         <div class="container">
         <div class="screen"></div>
           <div class="row">
@@ -121,27 +142,24 @@ async function bookingPage() {
             <div id="seat" class="seat"></div>
           </div>
         </div>
-      </div>
-      </div>
-    </div>
-  `);
-}
+        */
 
 
 function formatArray(data) {
-  let dataString = "";
+  let dataString = '';
   for (let x = 0; x < data.length; x++) {
     dataString += data[x];
-    if (x < data.length - 1)
-      dataString += ", ";
+    if (x < data.length - 1) dataString += ', ';
   }
   return dataString;
 }
 function formatTime(minutes) {
-  let timeString = "";
+  let timeString = '';
   let restMinutes = minutes % 60;
   let hours = (minutes - restMinutes) / 60;
-  timeString = (hours > 0 ? hours + " tim " : "") + (restMinutes > 0 ? restMinutes + " min" : "");
+  timeString =
+    (hours > 0 ? hours + ' tim ' : '') +
+    (restMinutes > 0 ? restMinutes + ' min' : '');
   return timeString;
 }
 function displayReviews(review){
@@ -163,15 +181,7 @@ function displayReviews(review){
   return html;
 }
 
-
 async function showMyTickets() {
-
-
-
-
-
-
-
   $('.mainContent').html(`
 
     <div class="container bg-dark text-white">
@@ -195,8 +205,6 @@ async function showMyTickets() {
      </div >
     </div >
   `);
-
-
 }
 //# "SIDORNA"
 
@@ -227,7 +235,7 @@ async function displaySearchResult(movies) {
     html += `
     <div class="col-md-4 col-md-6 mt-2 gap-3">
     <a href="#film-${x}">
-    <img src="images/Poster-${id}.jpg" alt="" height="75%" width="auto" />
+    <img src="images/Poster-${id}.jpg" alt="" height="400px" width="250px" />
     </a>
     </div>
     `;
