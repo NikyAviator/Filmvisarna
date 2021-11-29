@@ -23,7 +23,11 @@ function reactOnHashChange() {
   } else if (pageToDisplay.indexOf('booking') === 0) {
     bookingPage();
     return;
+  } else if (pageToDisplay.indexOf('showTickets') === 0) {
+    showMyTickets();
+    return;
   }
+
   // ANNARS
 
   window[pageToDisplay]();
@@ -139,8 +143,40 @@ function formatTime(minutes) {
 }
 
 
+async function showMyTickets() {
 
 
+
+
+
+
+
+  $('.mainContent').html(`
+
+    <div class="container bg-dark text-white">
+    <div class="row">
+      <div class="col-md-3 mx-auto">
+              <h1>Your tickets</h1>
+      </div> 
+     </div>
+     <div class="row">
+     
+      <div id="biljetten" class="col-md-6 mt-5 bg-danger text-white text mx-auto">
+              <img src="images/newMovieLogo.svg" alt="Movie Logo" width="45" height="45"
+          class="d-inline-block align-text-top" />
+      <h2 class="text-dark">(Filmens namn)</h2>
+          <h3>Datum/Tid : </h3>
+          <h3>Pris : </h3>
+          <h3>Antal biljetter : </h3>
+          <h3>Platser : </h3>
+          <p><small class="text-dark">Toalettkod : 5496</small></p>
+      </div >
+     </div >
+    </div >
+  `);
+
+
+}
 //# "SIDORNA"
 
 // -----
