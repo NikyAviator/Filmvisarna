@@ -22,7 +22,7 @@ function drawNavbar() {
               <a class="nav-link" href="#">Tickets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Show times</a>
+              <a class="nav-link" href="#show-my-tickets">Show my tickets</a>
             </li>
             <!-- The shopping button-->
             <li class="nav-item">

@@ -23,7 +23,7 @@ function reactOnHashChange() {
   } else if (pageToDisplay.indexOf('booking') === 0) {
     bookingPage();
     return;
-  } else if (pageToDisplay.indexOf('showTickets') === 0) {
+  } else if (pageToDisplay.indexOf('show-my-tickets') === 0) {
     showMyTickets();
     return;
   }
@@ -162,12 +162,12 @@ function formatTime(minutes) {
     (restMinutes > 0 ? restMinutes + ' min' : '');
   return timeString;
 }
-function displayReviews(review){
+function displayReviews(review) {
   let html = "";
-  for (let i = 0; i < review.length; i++){
+  for (let i = 0; i < review.length; i++) {
     html += `<div class="col-md-4"> <div class="d-flex justify-content-center">`
-    for (let stars = 0; stars < review[i].max; stars++){
-      if (stars<=(review[i].stars-1)) {
+    for (let stars = 0; stars < review[i].max; stars++) {
+      if (stars <= (review[i].stars - 1)) {
         html += `<img src="/images/icon-star-light.png" class="star">`
       }
       else {
