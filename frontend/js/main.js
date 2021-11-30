@@ -235,7 +235,7 @@ async function displaySearchResult(movies) {
     html += `
     <div class="col-lg-4 col-md-6 mt-2 gap-3">
     <a href="#film-${x}">
-    <img src="images/Poster-${id}.jpg" alt="" height="400px" width="250px" />
+    <img style="border: 15px ridge darkred; border-radius: 15px" src="images/Poster-${id}.jpg" alt="" height="400px" width="250px" />
     </a>
     </div>
     `;
