@@ -105,11 +105,6 @@ async function focusMovie(id) {
 // på booking sidan - ingen logiken ännu , ville bara visa hur jag expanderar på
 // det vi redan har så det kanske är enklare att förstå.
 async function bookingPage() {
-  //let shows = await (await fetch('/json/shows.json')).json();
-  //let booking = shows[id - 1];
-
-  let booking = shows[0];
-  //let film = result[id - 1];
 
   // WIP - WIP - WIP 
   // Tänkte vi kunde ha en kalender med noteringa för visningar för relevant film. 
