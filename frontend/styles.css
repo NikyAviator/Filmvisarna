@@ -47,6 +47,12 @@ h2 {
   background-color: #dc3545;
   color: #fff;
 }
+
+/* Tim : Calender showings date box-bg styling */
+.activeClass{
+   	background: rgb(0, 255, 34); 
+  }
+
 /* Testimonials, the red color is the danger color in BS5*/
 #testimonials {
   text-align: center;

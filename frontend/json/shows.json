@@ -2,14 +2,14 @@
   {
     "id": 1,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-01",
     "time": "15.00"
   },
   {
     "id": 2,
     "auditorium": "Lilla Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-01",
     "time": "18.00"
   },
@@ -37,14 +37,14 @@
   {
     "id": 6,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-02",
     "time": "21.00"
   },
   {
     "id": 7,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-03",
     "time": "15.00"
   },
@@ -72,14 +72,14 @@
   {
     "id": 11,
     "auditorium": "Lilla Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-04",
     "time": "18.00"
   },
   {
     "id": 12,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-04",
     "time": "21.00"
   },
@@ -107,14 +107,14 @@
   {
     "id": 16,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-06",
     "time": "15.00"
   },
   {
     "id": 17,
     "auditorium": "Lilla Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-06",
     "time": "18.00"
   },
@@ -142,14 +142,14 @@
   {
     "id": 21,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-07",
     "time": "21.00"
   },
   {
     "id": 22,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-08",
     "time": "15.00"
   },
@@ -177,14 +177,14 @@
   {
     "id": 26,
     "auditorium": "Lilla Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-09",
     "time": "18.00"
   },
   {
     "id": 27,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-09",
     "time": "21.00"
   },
@@ -212,14 +212,14 @@
   {
     "id": 31,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-11",
     "time": "15.00"
   },
   {
     "id": 32,
     "auditorium": "Lilla Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-11",
     "time": "18.00"
   },
@@ -247,14 +247,14 @@
   {
     "id": 36,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-12",
     "time": "21.00"
   },
   {
     "id": 37,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-13",
     "time": "15.00"
   },
@@ -282,14 +282,14 @@
   {
     "id": 41,
     "auditorium": "Lilla Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-14",
     "time": "18.00"
   },
   {
     "id": 42,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-14",
     "time": "21.00"
   },
@@ -317,14 +317,14 @@
   {
     "id": 46,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-16",
     "time": "15.00"
   },
   {
     "id": 47,
     "auditorium": "Lilla Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-16",
     "time": "18.00"
   },
@@ -352,14 +352,14 @@
   {
     "id": 51,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-17",
     "time": "21.00"
   },
   {
     "id": 52,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-18",
     "time": "15.00"
   },
@@ -387,14 +387,14 @@
   {
     "id": 56,
     "auditorium": "Lilla Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-19",
     "time": "18.00"
   },
   {
     "id": 57,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-19",
     "time": "21.00"
   },
@@ -422,14 +422,14 @@
   {
     "id": 61,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-21",
     "time": "15.00"
   },
   {
     "id": 62,
     "auditorium": "Lilla Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-21",
     "time": "18.00"
   },
@@ -457,14 +457,14 @@
   {
     "id": 66,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-22",
     "time": "21.00"
   },
   {
     "id": 67,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-23",
     "time": "15.00"
   },
@@ -492,14 +492,14 @@
   {
     "id": 71,
     "auditorium": "Lilla Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-24",
     "time": "18.00"
   },
   {
     "id": 72,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-24",
     "time": "21.00"
   },
@@ -527,14 +527,14 @@
   {
     "id": 76,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-26",
     "time": "15.00"
   },
   {
     "id": 77,
     "auditorium": "Lilla Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-26",
     "time": "18.00"
   },
@@ -562,14 +562,14 @@
   {
     "id": 81,
     "auditorium": "Stora Salongen",
-    "film": "Spiderman: Homecoming",
+    "film": "Spiderman Homecoming",
     "date": "2021-12-27",
     "time": "21.00"
   },
   {
     "id": 82,
     "auditorium": "Stora Salongen",
-    "film": "Matrix",
+    "film": "The Matrix",
     "date": "2021-12-28",
     "time": "15.00"
   },

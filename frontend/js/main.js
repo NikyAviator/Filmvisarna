@@ -9,6 +9,7 @@ function reactOnHashChange() {
   let pageToDisplay = location.hash || 'mainPage';
   pageToDisplay = pageToDisplay.replace('#', '');
 
+
   // OM vi klickat på en genererad hashlänk som börjar med
   // film så sök våran JSON fil
   if (pageToDisplay.indexOf('film') === 0) {
@@ -20,7 +21,8 @@ function reactOnHashChange() {
     // ie let film = movies.find(x => x.id == id);
     focusMovie(filmId);
     return;
-  } else if (pageToDisplay.indexOf('booking') === 0) {
+  }
+  else if (pageToDisplay.indexOf('booking') === 0) {
     bookingPage();
     return;
   }
@@ -48,6 +50,11 @@ async function focusMovie(id) {
 
   // Här kan man ändra "sidan" när man klickat på en poster och innehållet visas.
   let film = result[id - 1];
+
+  // Spara sista klickade filmen för booking ref till att 
+  // söka efter visningar på booking.
+  //https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh
+  localStorage.setItem("lastMovie", film.title);
 
   $('.mainContent').html(`
 
@@ -88,38 +95,97 @@ async function focusMovie(id) {
 // det vi redan har så det kanske är enklare att förstå.
 async function bookingPage() {
   //let shows = await (await fetch('/json/shows.json')).json();
-
   //let booking = shows[id - 1];
 
 
-  $('.mainContent').html(`
-    <div class="container bg-dark text-white">
-    <div class="row">
-      <div class="col-3 me-auto">
-        <h1>Pick your showing</h1>
-        </div>
+  // WIP - WIP - WIP 
+  // Tänkte vi kunde ha en kalender med noteringa för visningar för relevant film. 
+  // markering av datum skapar en dropdown lista med tider för datumet.
+  //---
+  // refresh tar bort global vars så måste spara data i no konstant form. 
 
-      <div class="col-md-7 col-xs-12 me-auto">
-        <div class="ratio ratio-16x9">
-        <div class="container">
-        <div class="screen"></div>
-          <div class="row">
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-            <div id="seat" class="seat"></div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  `);
+  // saves movies past refresh.
+  var currentMovie = localStorage.getItem("lastMovie");
+
+  // display
+  $('.mainContent').html(`
+  <div class="showingsCalender">
+  <div id="datepicker" data-date="30/12/2021"></div>
+  <input type="hidden" id="my_hidden_input">
+
+  <input type="text" id="dateOutput"  placeholder="Selected show date">
+  <input type="text" id="currMovie"  placeholder="Selected Movie">
+  </div>
+`);
+
+  // För klarhetens skull så skriver jag ut vilken film vi kollar på.
+  $("#currMovie").attr("placeholder", currentMovie);
+
+  let shows = await (await fetch('/json/shows.json')).json();
+
+  if (shows.length === 0) {
+    alert.log('No shows ?.');
+    return;
+  }
+
+  let sorted = [];
+
+  // sort based on 'film' -> date.
+  for (let { film, date } of shows) {
+    if (film.indexOf(currentMovie) === 0) {
+      sorted.push(formatDate(date));
+    }
+  }
+
+  // här kan vi fylla på med visnings datum från json.
+  var active_dates = sorted;
+
+  // visar datum med visning i grönt
+  $("#datepicker").datepicker({
+    format: "dd/mm/yyyy",
+    autoclose: true,
+    todayHighlight: false,
+    beforeShowDay: function (date) {
+      var d = date;
+      var curr_date = d.getDate();
+      var curr_month = d.getMonth() + 1; //Months are zero based
+      var curr_year = d.getFullYear();
+      var formattedDate = curr_date + "/" + curr_month + "/" + curr_year
+
+      if ($.inArray(formattedDate, active_dates) != -1) {
+        return {
+          classes: 'activeClass'
+        };
+      }
+      return;
+    }
+  });
+
+  //Event : Visar bara vart man klickat sist.
+  $('#datepicker').on('changeDate', function () {
+
+    let date = $('#datepicker').data('datepicker').viewDate;
+    $("#dateOutput").attr("placeholder", date);
+  }
+  );
 }
 
+// Used by booking to convert dates within shows.json. "dd/mm/yyyy"
+// Per stackoverflow https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+function formatDate(date) {
+  var d = new Date(date),
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+
+  /* 
+  if (month.length < 2)
+    month = '0' + month;
+  if (day.length < 2)
+    day = '0' + day;
+  */
+  return [day, month, year].join('/');
+}
 
 function formatArray(data) {
   let dataString = "";
@@ -130,6 +196,7 @@ function formatArray(data) {
   }
   return dataString;
 }
+
 function formatTime(minutes) {
   let timeString = "";
   let restMinutes = minutes % 60;
@@ -137,9 +204,6 @@ function formatTime(minutes) {
   timeString = (hours > 0 ? hours + " tim " : "") + (restMinutes > 0 ? restMinutes + " min" : "");
   return timeString;
 }
-
-
-
 
 //# "SIDORNA"
 
