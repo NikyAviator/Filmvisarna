@@ -1,7 +1,18 @@
 /* BODY and positioning*/
 body {
   font-family: 'Montserrat', sans-serif;
-  
+}
+/* H1 and H2*/
+h1 {
+  font-weight: bold;
+  color: aliceblue;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  padding-bottom: 20px;
 }
 
 /* Navigation Bar */
@@ -23,28 +34,13 @@ body {
 /* Title container (where the movies are)*/
 .title {
   background-image: url('/images/1552.jpg');
-  background-color: #cccccc;
   background-size: cover;
   background-position: center;
-}
-
-/* H1 and H2*/
-h1 {
-  font-weight: bold;
-  color: aliceblue;
-}
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 2.5rem;
-  line-height: 1.5;
-  padding-bottom: 20px;
 }
 
 /* Tim : Without this focusBody will not be visable*/
 #mainContent {
   text-align: center;
-  background-color: #dc3545;
   color: #fff;
 }
 
@@ -63,19 +59,14 @@ h2 {
   padding: 5% 10%;
 }
 
-#anton-pic {
-  border-radius: 50%;
-}
-#sara-pic {
-  border-radius: 50%;
-}
-#gustav-pic {
-  border-radius: 50%;
-}
+#anton-pic,
+#sara-pic,
+#gustav-pic,
 #tim-pic {
   border-radius: 50%;
 }
 
+/* Booking part: Screen, seats, tickets, stars: */
 .screen {
   background-color: #fff;
   height: 70px;
@@ -92,4 +83,15 @@ h2 {
   margin: 3px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+#biljetten {
+  margin-top: 1rem;
+  width: 60%;
+  height: 23rem;
+  border-radius: 15px;
+  border: 15px double rgb(143, 22, 28);
+}
+.star {
+  width: 15%;
 }
