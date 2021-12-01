@@ -53,19 +53,14 @@ h2 {
   padding: 5% 10%;
 }
 
-#anton-pic {
-  border-radius: 50%;
-}
-#sara-pic {
-  border-radius: 50%;
-}
-#gustav-pic {
-  border-radius: 50%;
-}
+#anton-pic,
+#sara-pic,
+#gustav-pic,
 #tim-pic {
   border-radius: 50%;
 }
 
+/* Booking part: Screen, seats, tickets, stars: */
 .screen {
   background-color: #fff;
   height: 70px;
