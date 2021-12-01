@@ -34,7 +34,6 @@ h2 {
 /* Title container (where the movies are)*/
 .title {
   background-image: url('/images/1552.jpg');
-  background-color: #cccccc;
   background-size: cover;
   background-position: center;
 }
@@ -42,7 +41,6 @@ h2 {
 /* Tim : Without this focusBody will not be visable*/
 #mainContent {
   text-align: center;
-  background-color: #dc3545;
   color: #fff;
 }
 /* Testimonials, the red color is the danger color in BS5*/

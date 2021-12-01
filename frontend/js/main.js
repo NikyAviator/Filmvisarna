@@ -58,13 +58,15 @@ async function focusMovie(id) {
     <div class="container bg-dark text-white">
     <div class="row">
       <div class="col-3 me-auto">
-        <img src="/images/Poster-${film.id
-    }.jpg" class="img-fluid d-none d-sm-block">
+        <img src="/images/Poster-${
+          film.id
+        }.jpg" class="img-fluid d-none d-sm-block">
       </div>
       <div class="col-md-7 col-xs-12 me-auto">
         <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers
-    }" title="YouTube video"
+          <iframe src="https://www.youtube.com/embed/${
+            film.youtubeTrailers
+          }" title="YouTube video"
             allowfullscreen></iframe>
         </div>
       </div>
@@ -76,8 +78,8 @@ async function focusMovie(id) {
           <div class="movieinfo mt-5">
             <h1>${film.title}</h1>
             <p>${formatArray(film.genre)} | ${formatTime(
-      film.length
-    )} | Språk: ${film.language} | Text: ${film.subtitles}</p>
+    film.length
+  )} | Språk: ${film.language} | Text: ${film.subtitles}</p>
             <div class="description">
               <p>${film.description}</p>
             </div>
@@ -102,7 +104,6 @@ async function focusMovie(id) {
 async function bookingPage(id) {
   let shows = await (await fetch('/json/shows.json')).json();
   //let result = await (await fetch('/json/movies.json')).json();
-
 
   let booking = shows[0];
   //let film = result[id - 1];
@@ -144,7 +145,6 @@ async function bookingPage(id) {
         </div>
         */
 
-
 function formatArray(data) {
   let dataString = '';
   for (let x = 0; x < data.length; x++) {
@@ -163,19 +163,18 @@ function formatTime(minutes) {
   return timeString;
 }
 function displayReviews(review) {
-  let html = "";
+  let html = '';
   for (let i = 0; i < review.length; i++) {
-    html += `<div class="col-md-4"> <div class="d-flex justify-content-center">`
+    html += `<div class="col-md-4"> <div class="d-flex justify-content-center">`;
     for (let stars = 0; stars < review[i].max; stars++) {
-      if (stars <= (review[i].stars - 1)) {
-        html += `<img src="/images/icon-star-light.png" class="star">`
-      }
-      else {
-        html += `<img src="/images/icon-star-grey.png" class="star">`
+      if (stars <= review[i].stars - 1) {
+        html += `<img src="/images/icon-star-light.png" class="star">`;
+      } else {
+        html += `<img src="/images/icon-star-grey.png" class="star">`;
       }
     }
     html += `</div> <br> <p class="text-center">"${review[i].quote}"</p> 
-              <p class="text-end">- ${review[i].source}</p> </div>`
+              <p class="text-end">- ${review[i].source}</p> </div>`;
   }
   console.log(html);
   return html;
