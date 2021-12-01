@@ -1,7 +1,18 @@
 /* BODY and positioning*/
 body {
   font-family: 'Montserrat', sans-serif;
-  
+}
+/* H1 and H2*/
+h1 {
+  font-weight: bold;
+  color: aliceblue;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  padding-bottom: 20px;
 }
 
 /* Navigation Bar */
@@ -26,19 +37,6 @@ body {
   background-color: #cccccc;
   background-size: cover;
   background-position: center;
-}
-
-/* H1 and H2*/
-h1 {
-  font-weight: bold;
-  color: aliceblue;
-}
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 2.5rem;
-  line-height: 1.5;
-  padding-bottom: 20px;
 }
 
 /* Tim : Without this focusBody will not be visable*/
@@ -88,16 +86,13 @@ h2 {
   border-top-right-radius: 10px;
 }
 
-#biljetten{
+#biljetten {
   margin-top: 1rem;
   width: 60%;
   height: 23rem;
   border-radius: 15px;
   border: 15px double rgb(143, 22, 28);
-
 }
-.star{
+.star {
   width: 15%;
 }
-
-
