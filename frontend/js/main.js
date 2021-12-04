@@ -115,15 +115,41 @@ async function bookingPage() {
   // saves movies past refresh.
   var currentMovie = localStorage.getItem("lastMovie");
 
+  /*
   // display
   $('.mainContent').html(`
+
+<div class="container bg-dark text-white">
+    <div class="row">
+      <div class="col-3 me-auto">
+          <h3 style="font-size:300%;">Shows</h3>
+      </div>
+    </div>
+
   <div class="showingsCalender">
-  <div id="datepicker" data-date="30/12/2021"></div>
+  <div id="datepicker" data-date="30/12/2021">  </div>
   <input type="hidden" id="my_hidden_input">
 
   <input type="text" id="dateOutput"  placeholder="Selected show date">
-  <input type="text" id="currMovie"  placeholder="Selected Movie">
   </div>
+
+
+`);
+*/
+
+  $('.mainContent').html(`
+
+<div class="container bg-dark text-white">
+
+<div class="row no-gutters">
+  <div class="col-12 col-sm-6 col-md-8">
+    <div class="showingsCalender"> </div>
+  <div id="datepicker" data-date="30/12/2021"></div>
+  </div>
+  <div class="col-6 col-md-4">
+ <h3 style="font-size:300%;">Shows</h3>
+  </div>
+</div>
 `);
 
   // För klarhetens skull så skriver jag ut vilken film vi kollar på.
@@ -204,6 +230,7 @@ function formatTime(minutes) {
     (restMinutes > 0 ? restMinutes + ' min' : '');
   return timeString;
 }
+
 function displayReviews(review) {
   let html = '';
   for (let i = 0; i < review.length; i++) {
