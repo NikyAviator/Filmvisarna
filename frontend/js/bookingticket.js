@@ -1,12 +1,31 @@
 async function bookTicket(id) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
-  let auditorium = shows [1];
-  
+  let auditorium = shows[1];
+
   if (auditorium.length === 0) {
     return;
   }
-  
-$('.mainContent').html(`
+  // Work in progress
+  let bio = shows[0].seatsPerRow;
+
+  let html = '';
+
+  let rowLenght = 0;
+
+  for (let h = 0; h < bio.length; h++) {
+    html += '<div class="row">';
+    rowLenght = bio[h];
+    for (let x = 0; x < rowLenght; x++) {
+      html += '<div class="seat"></div>';
+    }
+    html += '</div>';
+  }
+
+  console.log(html);
+
+  $('.write').html(html);
+
+  $('.mainContent').html(`
   <div class="container bg-dark text-white">
 
     <div class="row">
@@ -24,14 +43,16 @@ $('.mainContent').html(`
           <h6><br>${auditorium.auditorium}</h6>
         </div>
       </div>
-    
-      <div class="col-md-7 me-auto mt-md-2">
-        <div class="ratio ratio-16x9">
-        <div class="seats">${auditorium.seatsPerRow}</div>
+      <div class="col-md-7 me-auto mt-md-2 ">
           <div class="screen"></div>
-          <div class="seats">${auditorium.seatsPerRow}</div>
           
+        
+        <div class="text offset-md-4">
+        <div class="seats">
+        ${html}
         </div>
+        </div>
+
       </div>
     
     </div>
@@ -48,7 +69,6 @@ bookTicket();
 // showId = id of the show to book
 // seats should be an array of set numbers
 async function book(showId, seats) {
-
   let availableSeats = freeSeats(showId);
 
   // We have got an error from freeSeats, just return it
@@ -62,7 +82,7 @@ async function book(showId, seats) {
   // Check that all the seats we want to book are available
   for (let seat of seats) {
     if (!availableSeats.includes(seat)) {
-      return "Could not perform booking. Seat " + seat + " not available";
+      return 'Could not perform booking. Seat ' + seat + ' not available';
     }
   }
 
@@ -70,7 +90,7 @@ async function book(showId, seats) {
   let booking = {
     id: data.bookings.length + 1,
     showId,
-    seats
+    seats,
   };
 
   // Add the booking to the existing bookings
@@ -87,23 +107,30 @@ async function book(showId, seats) {
 function freeSeats(showId) {
   // Find the show
   let show = findById('shows', showId);
-  if (!show) { return 'Show does not exist!'; }
+  if (!show) {
+    return 'Show does not exist!';
+  }
 
   // Find the auditorium
-  let auditorium = data.auditoriums.find(x => x.name = show.auditorium);
-  if (!auditorium) { return 'Invalid auditorium in show data!'; }
+  let auditorium = data.auditoriums.find((x) => (x.name = show.auditorium));
+  if (!auditorium) {
+    return 'Invalid auditorium in show data!';
+  }
 
   // Loop through all bookings to get occupied seats
   let occupiedSeats = [];
   for (let booking of data.bookings) {
     // If it is not the same show then do nothing
-    if (booking.showId != showId) { continue; }
+    if (booking.showId != showId) {
+      continue;
+    }
     // Add the seats as occupied
     occupiedSeats.push(...booking.seats);
   }
 
   // Build an array with all seats in the auditorium
-  let seats = [], seatNumber = 1;
+  let seats = [],
+    seatNumber = 1;
   for (seatsInARow of auditorium.seatsPerRow) {
     let row = [];
     seats.push(row);

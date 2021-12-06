@@ -45,9 +45,9 @@ h2 {
 }
 
 /* Tim : Calender showings date box-bg styling */
-.activeClass{
-   	background: rgb(0, 255, 34); 
-  }
+.activeClass {
+  background: rgb(0, 255, 34);
+}
 
 /* Testimonials, the red color is the danger color in BS5*/
 #testimonials {
@@ -81,8 +81,12 @@ h2 {
   height: 12px;
   width: 15px;
   margin: 3px;
+
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+.row {
+  display: flex;
 }
 
 #biljetten {
