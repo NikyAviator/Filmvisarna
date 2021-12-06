@@ -116,14 +116,14 @@ async function focusMovie(id) {
         <div class="col-md-7 me-auto mt-md-2">
           <div class="movieinfo mt-5">
             <h1>${film.title}</h1>
-            <p>${formatArray(film.genre)} | ${formatTime(
+            <p>${film.genre.join(', ')} | ${formatTime(
       film.length
     )} | Språk: ${film.language} | Text: ${film.subtitles}</p>
             <div class="description">
               <p>${film.description}</p>
             </div>
             <p>Regi: ${film.director}</p>
-            <p>Skådespelare: ${formatArray(film.actors)}</p>
+            <p>Skådespelare: ${film.actors.join(', ')}</p>
             <p>Distributör: ${film.distributor}</p>
           </div>
         </div>
@@ -253,15 +253,6 @@ function formatDate(date) {
     day = '0' + day;
   */
   return [day, month, year].join('/');
-}
-
-function formatArray(data) {
-  let dataString = '';
-  for (let x = 0; x < data.length; x++) {
-    dataString += data[x];
-    if (x < data.length - 1) dataString += ', ';
-  }
-  return dataString;
 }
 
 function formatTime(minutes) {
