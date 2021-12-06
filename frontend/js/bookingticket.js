@@ -21,10 +21,6 @@ async function bookTicket(id) {
     html += '</div>';
   }
 
-  console.log(html);
-
-  $('.write').html(html);
-
   $('.mainContent').html(`
   <div class="container bg-dark text-white">
 
