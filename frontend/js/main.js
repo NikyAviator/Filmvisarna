@@ -39,10 +39,11 @@ function reactOnHashChange() {
 
 async function showMyTickets() {
 
+  let result = await (await fetch('/json/shows.json')).json();
 
-  let result = await (await fetch('/json/bookings.json')).json();
+  let film = result[0];
 
-
+  console.log(film)
   $('.mainContent').html(`
 
     <div class="container bg-dark text-white">
@@ -56,11 +57,11 @@ async function showMyTickets() {
       <div id="biljetten" class="col-md-6 mt-5 bg-danger text-white text mx-auto">
               <img src="images/newMovieLogo.svg" alt="Movie Logo" width="45" height="45"
           class="d-inline-block align-text-top" />
-      <h2 class="text-dark">(Filmens namn)</h2>
-          <h3>Datum/Tid : </h3>
-          <h3>Pris : </h3>
+      <h2 class="text-dark">${film.film}</h2>
+          <h3>Datum/Tid : ${film.time} </h3>
+          <h3>Pris : 70kr </h3>
           <h3>Antal biljetter : </h3>
-          <h3>Platser :${bookings.seats} </h3>
+          <h3>Salong : ${film.auditorium} </h3>
           <p><small class="text-dark">Toalettkod : 5496</small></p>
       </div >
      </div >
@@ -320,7 +321,7 @@ async function displaySearchResult(movies) {
     html += `
     <div class="col-lg-4 col-md-6 mt-2 gap-3">
     <a href="#film-${x}">
-    <img style="border: 15px ridge darkred; border-radius: 15px" src="images/Poster-${id}.jpg" alt="" height="400px" width="250px" />
+    <img style="border: 15px ridge darkred; border-radius: 15px" src="images/Poster-${id}.jpg" alt="" height="400px" width="280px" />
     </a>
     </div>
     `;
