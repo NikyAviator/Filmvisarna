@@ -28,6 +28,9 @@ function reactOnHashChange() {
   } else if (pageToDisplay.indexOf('show-my-tickets') === 0) {
     showMyTickets();
     return;
+  } else if (pageToDisplay.indexOf('book-ticket') === 0) {
+    bookTicket();
+    return;
   }
 
   // ANNARS
@@ -182,6 +185,7 @@ async function bookingPage() {
   </div>
   <div class="col-6 col-md-4">
  <h3 style="font-size:300%;">Shows</h3>
+ <a href="#book-ticket" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">See shows</a>
   </div>
 </div>
 `);
