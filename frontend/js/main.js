@@ -9,7 +9,6 @@ function reactOnHashChange() {
   let pageToDisplay = location.hash || 'mainPage';
   pageToDisplay = pageToDisplay.replace('#', '');
 
-
   // OM vi klickat på en genererad hashlänk som börjar med
   // film så sök våran JSON fil
   if (pageToDisplay.indexOf('film') === 0) {
@@ -21,15 +20,14 @@ function reactOnHashChange() {
     // ie let film = movies.find(x => x.id == id);
     focusMovie(filmId);
     return;
-  }
-  else if (pageToDisplay.indexOf('booking') === 0) {
+  } else if (pageToDisplay.indexOf('booking') === 0) {
     bookingPage();
     return;
   } else if (pageToDisplay.indexOf('show-my-tickets') === 0) {
     showMyTickets();
     return;
   } else if (pageToDisplay.indexOf('book-ticket') === 0) {
-    bookTicket();
+    //bookTicket();
     return;
   }
 
@@ -41,12 +39,11 @@ function reactOnHashChange() {
 //# "SIDORNA"
 
 async function showMyTickets() {
-
   let result = await (await fetch('/json/shows.json')).json();
 
   let film = result[0];
 
-  console.log(film)
+  console.log(film);
   $('.mainContent').html(`
 
     <div class="container bg-dark text-white">
@@ -70,8 +67,6 @@ async function showMyTickets() {
      </div >
     </div >
   `);
-
-
 }
 
 // Methoderna för "sidorna" / hashlinkarna  ---
@@ -92,23 +87,25 @@ async function focusMovie(id) {
   // Här kan man ändra "sidan" när man klickat på en poster och innehållet visas.
   let film = result[id - 1];
 
-  // Spara sista klickade filmen för booking ref till att 
+  // Spara sista klickade filmen för booking ref till att
   // söka efter visningar på booking.
   //https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh
-  localStorage.setItem("lastMovie", film.title);
+  localStorage.setItem('lastMovie', film.title);
 
   $('.mainContent').html(`
 
     <div class="container bg-dark text-white">
     <div class="row">
       <div class="col-3 me-auto">
-        <img src="/images/Poster-${film.id
-    }.jpg" class="img-fluid d-none d-sm-block">
+        <img src="/images/Poster-${
+          film.id
+        }.jpg" class="img-fluid d-none d-sm-block">
       </div>
       <div class="col-md-7 col-xs-12 me-auto">
         <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers
-    }" title="YouTube video"
+          <iframe src="https://www.youtube.com/embed/${
+            film.youtubeTrailers
+          }" title="YouTube video"
             allowfullscreen></iframe>
         </div>
       </div>
@@ -119,9 +116,9 @@ async function focusMovie(id) {
         <div class="col-md-7 me-auto mt-md-2">
           <div class="movieinfo mt-5">
             <h1>${film.title}</h1>
-            <p>${film.genre.join(', ')} | ${formatTime(
-      film.length
-    )} | Språk: ${film.language} | Text: ${film.subtitles}</p>
+            <p>${film.genre.join(', ')} | ${formatTime(film.length)} | Språk: ${
+    film.language
+  } | Text: ${film.subtitles}</p>
             <div class="description">
               <p>${film.description}</p>
             </div>
@@ -142,15 +139,14 @@ async function focusMovie(id) {
 // på booking sidan - ingen logiken ännu , ville bara visa hur jag expanderar på
 // det vi redan har så det kanske är enklare att förstå.
 async function bookingPage() {
-
-  // WIP - WIP - WIP 
-  // Tänkte vi kunde ha en kalender med noteringa för visningar för relevant film. 
+  // WIP - WIP - WIP
+  // Tänkte vi kunde ha en kalender med noteringa för visningar för relevant film.
   // markering av datum skapar en dropdown lista med tider för datumet.
   //---
-  // refresh tar bort global vars så måste spara data i no konstant form. 
+  // refresh tar bort global vars så måste spara data i no konstant form.
 
   // saves movies past refresh.
-  var currentMovie = localStorage.getItem("lastMovie");
+  var currentMovie = localStorage.getItem('lastMovie');
 
   /*
   // display
@@ -191,7 +187,7 @@ async function bookingPage() {
 `);
 
   // För klarhetens skull så skriver jag ut vilken film vi kollar på.
-  $("#currMovie").attr("placeholder", currentMovie);
+  $('#currMovie').attr('placeholder', currentMovie);
 
   let shows = await (await fetch('/json/shows.json')).json();
 
@@ -213,8 +209,8 @@ async function bookingPage() {
   var active_dates = sorted;
 
   // visar datum med visning i grönt
-  $("#datepicker").datepicker({
-    format: "dd/mm/yyyy",
+  $('#datepicker').datepicker({
+    format: 'dd/mm/yyyy',
     autoclose: true,
     todayHighlight: false,
     beforeShowDay: function (date) {
@@ -222,24 +218,22 @@ async function bookingPage() {
       var curr_date = d.getDate();
       var curr_month = d.getMonth() + 1; //Months are zero based
       var curr_year = d.getFullYear();
-      var formattedDate = curr_date + "/" + curr_month + "/" + curr_year
+      var formattedDate = curr_date + '/' + curr_month + '/' + curr_year;
 
       if ($.inArray(formattedDate, active_dates) != -1) {
         return {
-          classes: 'activeClass'
+          classes: 'activeClass',
         };
       }
       return;
-    }
+    },
   });
 
   //Event : Visar bara vart man klickat sist.
   $('#datepicker').on('changeDate', function () {
-
     let date = $('#datepicker').data('datepicker').viewDate;
-    $("#dateOutput").attr("placeholder", date);
-  }
-  );
+    $('#dateOutput').attr('placeholder', date);
+  });
 }
 
 // Used by booking to convert dates within shows.json. "dd/mm/yyyy"

@@ -11,12 +11,12 @@ async function bookTicket(id) {
   let html = '';
 
   let rowLenght = 0;
-
+  // CHANGED: ID ADDED TO ROWS AND SEATS -- WORK IN PROGRESS
   for (let h = 0; h < bio.length; h++) {
-    html += '<div class="row">';
+    html += `<div class="row" >`;
     rowLenght = bio[h];
     for (let x = 0; x < rowLenght; x++) {
-      html += '<div class="seat"></div>';
+      html += `<div class="seat" id="seat${h}_${x}"></div>`;
     }
     html += '</div>';
   }
@@ -55,7 +55,13 @@ async function bookTicket(id) {
 
   </div>
 `);
+  // Event listener to get row and seat number when we click a seat
+  // https://stackoverflow.com/questions/48239/getting-the-id-of-the-element-that-fired-an-event/48684#48684
+  $('.seat').click(function (event) {
+    alert(event.target.id);
+  });
 }
+
 bookTicket();
 
 //Här nedan är det Thomas Kod vi fick i samband med uppgiften
