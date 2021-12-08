@@ -74,6 +74,7 @@ h2 {
   margin: 15px 0;
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  margin-bottom: 50px;
 }
 
 .seat {
@@ -81,10 +82,30 @@ h2 {
   height: 12px;
   width: 15px;
   margin: 3px;
-
+  margin-bottom: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
+.seatOccupied {
+  background-color: red;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  margin-bottom: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.seatSelected {
+  background-color: rgb(107, 150, 107);
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  margin-bottom: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .row {
   display: flex;
 }

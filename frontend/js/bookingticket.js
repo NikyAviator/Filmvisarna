@@ -11,7 +11,7 @@ async function bookTicket(id) {
   let html = '';
 
   let rowLenght = 0;
-  // CHANGED: ID ADDED TO ROWS AND SEATS -- WORK IN PROGRESS
+  // CHANGED: ID ADDED TO ROWS AND SEATS -- WORK IN PROGRESS -- RENDER THE SEATS IN dynamic HTML
   for (let h = 0; h < bio.length; h++) {
     html += `<div class="row" >`;
     rowLenght = bio[h];
@@ -56,9 +56,13 @@ async function bookTicket(id) {
   </div>
 `);
   // Event listener to get row and seat number when we click a seat
-  // https://stackoverflow.com/questions/48239/getting-the-id-of-the-element-that-fired-an-event/48684#48684
+  //
   $('.seat').click(function (event) {
-    alert(event.target.id);
+    if ($(this).attr('class') == 'seat') {
+      $(this).addClass('seatSelected');
+    } else {
+      $(this).removeClass('seatSelected');
+    }
   });
 }
 
