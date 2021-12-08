@@ -11,10 +11,11 @@ async function bookTicket(id) {
   let html = '';
 
   let rowLenght = 0;
-  // CHANGED: ID ADDED TO ROWS AND SEATS -- WORK IN PROGRESS -- RENDER THE SEATS IN dynamic HTML
+  // Runs a loop for each row in the auditorium, adds a div for each row
   for (let h = 0; h < bio.length; h++) {
     html += `<div class="row" >`;
     rowLenght = bio[h];
+    // A nested loop creates all the seats for one row
     for (let x = 0; x < rowLenght; x++) {
       html += `<div class="seat" id="row${h}_seat${x}"></div>`;
     }
@@ -56,7 +57,7 @@ async function bookTicket(id) {
   </div>
 `);
   // Event listener to get row and seat number when we click a seat
-  //
+  // We can now select seats and deselect them
   $('.seat').click(function (event) {
     if ($(this).attr('class') == 'seat') {
       $(this).addClass('seatSelected');
