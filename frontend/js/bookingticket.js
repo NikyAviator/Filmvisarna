@@ -16,7 +16,7 @@ async function bookTicket(id) {
     html += `<div class="row" >`;
     rowLenght = bio[h];
     for (let x = 0; x < rowLenght; x++) {
-      html += `<div class="seat" id="seat${h}_${x}"></div>`;
+      html += `<div class="seat" id="row${h}_seat${x}"></div>`;
     }
     html += '</div>';
   }
