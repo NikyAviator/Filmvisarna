@@ -75,8 +75,13 @@ h2 {
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
 }
-
+.row {
+  display: flex;
+  justify-content: center;
+}
 .seat {
   background-color: #444451;
   height: 12px;
@@ -104,10 +109,6 @@ h2 {
   margin-bottom: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-
-.row {
-  display: flex;
 }
 
 #biljetten {
