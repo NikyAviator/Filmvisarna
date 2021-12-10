@@ -31,9 +31,22 @@ function reactOnHashChange() {
     return;
   }
 
+
   // ANNARS
 
   window[pageToDisplay]();
+}
+
+
+// För Anton och Gustav backend ! Spara till JSON booking. OBS selectedSeats är
+// en array.
+//
+// # - Om object finns i booking.json fyll på de nya tagna stolplatserna
+// ANNARS
+// # om objectet inte finns i bookings så skapa det.
+// Tim
+async function processPayment(movieName, auditorium, date, time, selectedSeats) {
+  alert("movieName : " + movieName + " auditorium : " + auditorium + " date : " + date + " time : " + time + " selected Seats " + selectedSeats)
 }
 
 //# "SIDORNA"
@@ -97,15 +110,13 @@ async function focusMovie(id) {
     <div class="container bg-dark text-white">
     <div class="row">
       <div class="col-3 me-auto">
-        <img src="/images/Poster-${
-          film.id
-        }.jpg" class="img-fluid d-none d-sm-block">
+        <img src="/images/Poster-${film.id
+    }.jpg" class="img-fluid d-none d-sm-block">
       </div>
       <div class="col-md-7 col-xs-12 me-auto">
         <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/${
-            film.youtubeTrailers
-          }" title="YouTube video"
+          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers
+    }" title="YouTube video"
             allowfullscreen></iframe>
         </div>
       </div>
@@ -116,9 +127,8 @@ async function focusMovie(id) {
         <div class="col-md-7 me-auto mt-md-2">
           <div class="movieinfo mt-5">
             <h1>${film.title}</h1>
-            <p>${film.genre.join(', ')} | ${formatTime(film.length)} | Språk: ${
-    film.language
-  } | Text: ${film.subtitles}</p>
+            <p>${film.genre.join(', ')} | ${formatTime(film.length)} | Språk: ${film.language
+    } | Text: ${film.subtitles}</p>
             <div class="description">
               <p>${film.description}</p>
             </div>
@@ -135,59 +145,76 @@ async function focusMovie(id) {
     `);
 }
 
-// Om man klickat på booking knappen innuit en films sida så hamnar man
-// på booking sidan - ingen logiken ännu , ville bara visa hur jag expanderar på
-// det vi redan har så det kanske är enklare att förstå.
+// Some interesting information.
+// shows - date IS formated 23-12-2021
+// datepicker date IS formated 23/12/2021.
 async function bookingPage() {
-  // WIP - WIP - WIP
-  // Tänkte vi kunde ha en kalender med noteringa för visningar för relevant film.
-  // markering av datum skapar en dropdown lista med tider för datumet.
-  //---
-  // refresh tar bort global vars så måste spara data i no konstant form.
 
+  // Page presistance.
   // saves movies past refresh.
-  var currentMovie = localStorage.getItem('lastMovie');
+  let currentMovie = localStorage.getItem('lastMovie');
+  let currentAuditorium = "ERR";
+  let currentShowDate = "ERR";
+  let currentShowtime = "ERR";
+  // Just a WIP idea of how selected seats will be saved. 
+  let currentSelectedSeats = [10, 11, 8, 4];
 
-  /*
-  // display
-  $('.mainContent').html(`
+  if (localStorage.getItem("lastShowDate") === null) {
+    alert("Error lastShowDate not found in local storage.")
+    // Should be set todays date - if we havent visited the site 
+    // before.
+    currentShowDate = "2021-12-1"; // mock date.
+  }
+  else {
+    // It exist - good
+    currentShowDate = localStorage.getItem('lastShowDate');
+  }
 
-<div class="container bg-dark text-white">
-    <div class="row">
-      <div class="col-3 me-auto">
-          <h3 style="font-size:300%;">Shows</h3>
-      </div>
-    </div>
+  if (localStorage.getItem("lastAuditorium") === null) {
+    currentAuditorium = "ERR2";
+  }
+  else {
+    currentAuditorium = localStorage.getItem("lastAuditorium");
+  }
 
-  <div class="showingsCalender">
-  <div id="datepicker" data-date="30/12/2021">  </div>
-  <input type="hidden" id="my_hidden_input">
+  if (localStorage.getItem("lastShowtime") === null) {
+    currentShowtime = "ERR2";
+  }
+  else {
+    currentShowtime = localStorage.getItem("lastShowtime");
+  }
 
-  <input type="text" id="dateOutput"  placeholder="Selected show date">
-  </div>
-
-
-`);
-*/
-
+  // Load our content.
   $('.mainContent').html(`
 
 <div class="container bg-dark text-white">
 
 <div class="row no-gutters">
   <div class="col-12 col-sm-6 col-md-8">
+
     <div class="showingsCalender"> </div>
-  <div id="datepicker" data-date="30/12/2021"></div>
+  <div id="datepicker" data-date="${currentShowDate}"></div>
   </div>
   <div class="col-6 col-md-4">
  <h3 style="font-size:300%;">Shows</h3>
  <a href="#book-ticket" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">See shows</a>
-  </div>
+
+<a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
+
+
+</div>
+
+<input type="text" id="movieOutput" name="debugField" placeholder="Debug field movie.">
+<input type="text" id="bioSalongOutput" name="debugField" placeholder="Debug field biosalong.">
+<input type="text" id="dateOutput" name="debugField" placeholder="Debug field date.">
+<input type="text" id="timeOutput" name="debugField" placeholder="Debug field showTime.">
 </div>
 `);
 
-  // För klarhetens skull så skriver jag ut vilken film vi kollar på.
-  $('#currMovie').attr('placeholder', currentMovie);
+  // Debug fält , tas bort innan vi lämnar in.
+  $('#movieOutput').attr('placeholder', currentMovie);
+  $('#bioSalongOutput').attr('placeholder', currentAuditorium);
+  $('#timeOutput').attr('placeholder', currentShowtime);
 
   let shows = await (await fetch('/json/shows.json')).json();
 
@@ -198,19 +225,20 @@ async function bookingPage() {
 
   let sorted = [];
 
-  // sort based on 'film' -> date.
-  for (let { film, date } of shows) {
+
+  // Film namn efter alla datum till sorted.
+  for (let { film, date, auditorium } of shows) {
     if (film.indexOf(currentMovie) === 0) {
-      sorted.push(formatDate(date));
+      let indexedDate = formatDate(date);
+      sorted.push(indexedDate);
     }
   }
 
-  // här kan vi fylla på med visnings datum från json.
-  var active_dates = sorted;
+  let active_dates = sorted;
 
-  // visar datum med visning i grönt
+  // Populerar kalenderns för kundens översyn av vilka datum har 
   $('#datepicker').datepicker({
-    format: 'dd/mm/yyyy',
+    format: 'yyyy-mm-dd',
     autoclose: true,
     todayHighlight: false,
     beforeShowDay: function (date) {
@@ -218,7 +246,7 @@ async function bookingPage() {
       var curr_date = d.getDate();
       var curr_month = d.getMonth() + 1; //Months are zero based
       var curr_year = d.getFullYear();
-      var formattedDate = curr_date + '/' + curr_month + '/' + curr_year;
+      var formattedDate = curr_year + '-' + curr_month + '-' + curr_date;
 
       if ($.inArray(formattedDate, active_dates) != -1) {
         return {
@@ -231,26 +259,57 @@ async function bookingPage() {
 
   //Event : Visar bara vart man klickat sist.
   $('#datepicker').on('changeDate', function () {
-    let date = $('#datepicker').data('datepicker').viewDate;
-    $('#dateOutput').attr('placeholder', date);
+    let clickedDate = formatDate($('#datepicker').data('datepicker').viewDate);
+
+    localStorage.setItem('lastShowDate', clickedDate);
+    $('#dateOutput').attr('placeholder', clickedDate);
+
+    $('#bioSalongOutput').attr('placeholder', "None");
+    $('#timeOutput').attr('placeholder', "None");
+
+    //Clear och tagga fel nivå 3
+    // Fel nivå3 betyder att biljetten inte är gilitig dvs datum / salong / tid 
+    // matchar inte.
+    currentShowDate = "Err3";
+    currentAuditorium = "Err3";
+    currentShowtime = "Err3";
+
+    // Search or sorted array for just the date.
+    for (let { film, date, auditorium, time } of shows) {
+
+      if (film === currentMovie && formatDate(date) === clickedDate) {
+        $('#dateOutput').attr('placeholder', "Movie has a showing on " + clickedDate);
+        currentShowDate = clickedDate;
+        localStorage.setItem('lastShowDate', clickedDate);
+
+        localStorage.setItem('lastAuditorium', auditorium);
+        currentAuditorium = auditorium;
+        $('#bioSalongOutput').attr('placeholder', auditorium);
+
+        localStorage.setItem('lastShowtime', time);
+        currentShowtime = time;
+        $('#timeOutput').attr('placeholder', time);
+      }
+    }
   });
+
+  // Anton och Gustavs backend del.
+  $('#processTicket').on('click', function (e) {
+    let seats = [1, 2, 3, 4, 5, 10];
+    processPayment(currentMovie, currentAuditorium, currentShowDate, currentShowtime, seats);
+  })
+
 }
 
-// Used by booking to convert dates within shows.json. "dd/mm/yyyy"
-// Per stackoverflow https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+// Fixed it to reflect JSON structure instead.
 function formatDate(date) {
   var d = new Date(date),
     month = '' + (d.getMonth() + 1),
     day = '' + d.getDate(),
     year = d.getFullYear();
 
-  /* 
-  if (month.length < 2)
-    month = '0' + month;
-  if (day.length < 2)
-    day = '0' + day;
-  */
-  return [day, month, year].join('/');
+
+  return [year, month, day].join('-');
 }
 
 function formatTime(minutes) {
