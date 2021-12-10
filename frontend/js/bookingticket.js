@@ -22,25 +22,12 @@ async function bookTicket(id) {
     html += '</div>';
   }
 
-  $('.mainContent').html(`
+  $('.biosalong').html(`
   <div class="container bg-dark text-white">
 
     <div class="row">
        
-      <div class="col-3 me-auto">
-       <div class="movie-container">
-          <label>Pick Movie: </label>
-          <select id="movie">
-          <option> ${auditorium.film} </option>
-          </select>
-          <label>Pick a Showing: </label>
-          <select id="movie">
-          <option> ${auditorium.date} ${auditorium.time} </option>
-          </select>
-          <h6><br>${auditorium.auditorium}</h6>
-        </div>
-      </div>
-      <div class="col-md-7 me-auto mt-md-2 ">
+
           <div class="screen"></div>
           
         

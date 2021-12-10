@@ -196,11 +196,9 @@ async function bookingPage() {
   <div id="datepicker" data-date="${currentShowDate}"></div>
   </div>
   <div class="col-6 col-md-4">
- <h3 style="font-size:300%;">Shows</h3>
- <a href="#book-ticket" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">See shows</a>
-
 <a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
 
+<div class="biosalong"> </div>
 
 </div>
 
@@ -225,6 +223,7 @@ async function bookingPage() {
 
   let sorted = [];
 
+  bookTicket(0);
 
   // Film namn efter alla datum till sorted.
   for (let { film, date, auditorium } of shows) {
