@@ -47,6 +47,9 @@ function reactOnHashChange() {
 // Tim
 async function processPayment(movieName, auditorium, date, time, selectedSeats) {
   alert("movieName : " + movieName + " auditorium : " + auditorium + " date : " + date + " time : " + time + " selected Seats " + selectedSeats)
+
+  // Ladda -> Anton 
+  // GUstav -> Bookings 
 }
 
 //# "SIDORNA"
@@ -220,7 +223,6 @@ async function bookingPage() {
 
   let sorted = [];
 
-  bookTicket(0);
 
   // Film namn efter alla datum till sorted.
   for (let { film, date, auditorium } of shows) {
@@ -287,6 +289,10 @@ async function bookingPage() {
         $('#timeOutput').attr('placeholder', time);
       }
     }
+
+
+    if (currentAuditorium != "Err3")
+      bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime);
   });
 
   // Anton och Gustavs backend del.

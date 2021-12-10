@@ -1,10 +1,20 @@
-async function bookTicket(id) {
+async function bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
-  let auditorium = shows[1];
 
-  if (auditorium.length === 0) {
+  if (shows.length === 0) {
     return;
   }
+
+  alert(currentAuditorium);
+
+  let bioSalong = "ERR";
+  for (let { name } of shows) {
+
+    if (name == currentAuditorium) {
+      bioSalong = auditorium;
+    }
+  }
+
   // Work in progress
   let bio = shows[0].seatsPerRow;
 
