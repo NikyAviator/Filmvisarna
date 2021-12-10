@@ -190,22 +190,19 @@ async function bookingPage() {
 <div class="container bg-dark text-white">
 
 <div class="row no-gutters">
-  <div class="col-12 col-sm-6 col-md-8">
+  <div class="col-12 col-sm-4 col-md-4">
 
     <div class="showingsCalender"> </div>
   <div id="datepicker" data-date="${currentShowDate}"></div>
   </div>
   <div class="col-6 col-md-4">
-<a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
+
 
 <div class="biosalong"> </div>
 
 </div>
 
-<input type="text" id="movieOutput" name="debugField" placeholder="Debug field movie.">
-<input type="text" id="bioSalongOutput" name="debugField" placeholder="Debug field biosalong.">
-<input type="text" id="dateOutput" name="debugField" placeholder="Debug field date.">
-<input type="text" id="timeOutput" name="debugField" placeholder="Debug field showTime.">
+<a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
 </div>
 `);
 

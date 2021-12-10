@@ -31,7 +31,7 @@ async function bookTicket(id) {
           <div class="screen"></div>
           
         
-        <div class="text offset-md-1">
+        <div class="text">
         <div class="seats">
         ${html}
         </div>
