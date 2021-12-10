@@ -172,14 +172,12 @@ async function bookingPage() {
     // It exist - good
     currentShowDate = localStorage.getItem('lastShowDate');
   }
-
   if (localStorage.getItem("lastAuditorium") === null) {
     currentAuditorium = "ERR2";
   }
   else {
     currentAuditorium = localStorage.getItem("lastAuditorium");
   }
-
   if (localStorage.getItem("lastShowtime") === null) {
     currentShowtime = "ERR2";
   }
@@ -223,6 +221,7 @@ async function bookingPage() {
 
   let sorted = [];
 
+  bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime, currentSelectedSeats);
 
   // Film namn efter alla datum till sorted.
   for (let { film, date, auditorium } of shows) {
@@ -290,7 +289,6 @@ async function bookingPage() {
       }
     }
 
-
     if (currentAuditorium != "Err3")
       bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime);
   });
@@ -298,7 +296,7 @@ async function bookingPage() {
   // Anton och Gustavs backend del.
   $('#processTicket').on('click', function (e) {
     let seats = [1, 2, 3, 4, 5, 10];
-    processPayment(currentMovie, currentAuditorium, currentShowDate, currentShowtime, seats);
+    processPayment(currentMovie, currentAuditorium, currentShowDate, currentShowtime, currentSelectedSeats);
   })
 
 }

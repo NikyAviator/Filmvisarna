@@ -5,18 +5,19 @@ async function bookTicket(currentMovie, currentAuditorium, currentShowDate, curr
     return;
   }
 
-  alert(currentAuditorium);
+  //alert(currentAuditorium);
 
-  let bioSalong = "ERR";
-  for (let { name } of shows) {
-
-    if (name == currentAuditorium) {
-      bioSalong = auditorium;
+  let salong;
+  for (let i = 0; i < shows.length; i++) {
+    if (shows[i].name == currentAuditorium) {
+      salong = shows[i];
     }
   }
 
+  // alert(salong.name);
+
   // Work in progress
-  let bio = shows[0].seatsPerRow;
+  let bio = salong.seatsPerRow;
 
   let html = '';
 
