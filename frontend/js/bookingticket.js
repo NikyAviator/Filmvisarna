@@ -1,12 +1,23 @@
-async function bookTicket(id) {
+async function bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
-  let auditorium = shows[1];
 
-  if (auditorium.length === 0) {
+  if (shows.length === 0) {
     return;
   }
+
+  //alert(currentAuditorium);
+
+  let salong;
+  for (let i = 0; i < shows.length; i++) {
+    if (shows[i].name == currentAuditorium) {
+      salong = shows[i];
+    }
+  }
+
+  // alert(salong.name);
+
   // Work in progress
-  let bio = shows[0].seatsPerRow;
+  let bio = salong.seatsPerRow;
 
   let html = '';
 
