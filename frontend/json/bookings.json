@@ -1,14 +1,28 @@
 [
   {
-    "film": "The Matrix",
-    "auditorium": "Lilla Salongen",
-    "date": "2021-12-06",
-    "time": "18.00",
-    "occupiedSeats": [
+    "showId": 1,
+    "seats": [
       1,
-      2,
       5,
-      10
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "showId": 2,
+    "seats": [
+      14,
+      16,
+      17
+    ]
+  },
+  {
+    "showId": 3,
+    "seats": [
+      30,
+      80,
+      81
     ]
   }
 ]

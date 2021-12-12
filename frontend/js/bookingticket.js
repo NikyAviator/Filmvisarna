@@ -1,23 +1,45 @@
-async function bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime) {
+
+// Om det finns bookade platser så finns det också ett booking id.
+async function bookTicket(cinemaId, bookingId) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
+
+  let bookings = await (await fetch('/json/bookings.json')).json();
+
 
   if (shows.length === 0) {
     return;
   }
 
-  //alert(currentAuditorium);
+  let salong = shows[cinemaId];
+  let bio = salong.seatsPerRow;
 
-  let salong;
-  for (let i = 0; i < shows.length; i++) {
-    if (shows[i].name == currentAuditorium) {
-      salong = shows[i];
+  let busyChairs;
+
+  // Som sagt kan bli lite rörigt att relatera mellan shows.json och bookings.json
+  // samtidgt. För att se exemplet.
+  // Tryck Spiderman Homecoming. 
+  // Tryck datumet 1 december 2021.
+
+  // Uppgift #1
+  // Niky och jag kommer at göra dessa stolar röda pga 
+  // det är märkta som tagna/ RÖDA i bookings.json etc.
+  // Som sagt de inläggen i bookings.json är tillagda för hand 
+  // och är bara ett exemple. 
+  // ---
+  // Uppgift #2
+  // Spara klickade platser och retunera en array 
+  // med vald platser så de kan sparas i bookings av 
+  // anton och gustav. De skall inte behöva kolla om 
+  // platserna redan är tagna. 
+
+  for (let { showId, seats } of bookings) {
+    if (showId === bookingId) {
+
+      busyChairs = seats;
+      alert("Occupied chairs found." + busyChairs);
+      break;
     }
   }
-
-  // alert(salong.name);
-
-  // Work in progress
-  let bio = salong.seatsPerRow;
 
   let html = '';
 
@@ -64,8 +86,6 @@ async function bookTicket(currentMovie, currentAuditorium, currentShowDate, curr
     }
   });
 }
-
-bookTicket();
 
 //Här nedan är det Thomas Kod vi fick i samband med uppgiften
 //Har bara flyttat den från "book.js" som jag sedan tog bort :D

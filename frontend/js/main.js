@@ -159,6 +159,11 @@ async function bookingPage() {
   let currentAuditorium = "ERR";
   let currentShowDate = "ERR";
   let currentShowtime = "ERR";
+
+
+  let showId = -1;
+  let cinemaId = -1;
+
   // Just a WIP idea of how selected seats will be saved. 
   let currentSelectedSeats = [10, 11, 8, 4];
 
@@ -183,6 +188,13 @@ async function bookingPage() {
   }
   else {
     currentShowtime = localStorage.getItem("lastShowtime");
+  }
+
+  if (localStorage.getItem("lastShowId") === null) {
+    currentShowtime = -1;
+  }
+  else {
+    currentShowtime = localStorage.getItem("lastShowId");
   }
 
   // Load our content.
@@ -221,7 +233,7 @@ async function bookingPage() {
 
   let sorted = [];
 
-  bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime, currentSelectedSeats);
+  //bookTicket(cinemaId);
 
   // Film namn efter alla datum till sorted.
   for (let { film, date, auditorium } of shows) {
@@ -271,10 +283,18 @@ async function bookingPage() {
     currentAuditorium = "Err3";
     currentShowtime = "Err3";
 
+    cinemaId = -1;
+    showId = -1;
+
     // Search or sorted array for just the date.
-    for (let { film, date, auditorium, time } of shows) {
+    for (let { id, film, date, auditorium, time } of shows) {
 
       if (film === currentMovie && formatDate(date) === clickedDate) {
+
+        showId = id;
+        localStorage.setItem("lastShowId", showId);
+
+
         $('#dateOutput').attr('placeholder', "Movie has a showing on " + clickedDate);
         currentShowDate = clickedDate;
         localStorage.setItem('lastShowDate', clickedDate);
@@ -283,6 +303,13 @@ async function bookingPage() {
         currentAuditorium = auditorium;
         $('#bioSalongOutput').attr('placeholder', auditorium);
 
+        if (currentAuditorium == "Stora Salongen") {
+          cinemaId = 0;
+        }
+        else {
+          cinemaId = 1;
+        }
+
         localStorage.setItem('lastShowtime', time);
         currentShowtime = time;
         $('#timeOutput').attr('placeholder', time);
@@ -290,7 +317,7 @@ async function bookingPage() {
     }
 
     if (currentAuditorium != "Err3")
-      bookTicket(currentMovie, currentAuditorium, currentShowDate, currentShowtime);
+      bookTicket(cinemaId, showId);
   });
 
   // Anton och Gustavs backend del.
