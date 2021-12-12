@@ -33,7 +33,6 @@ function reactOnHashChange() {
 
 
   // ANNARS
-
   window[pageToDisplay]();
 }
 
@@ -50,102 +49,6 @@ async function processPayment(movieName, auditorium, date, time, selectedSeats) 
 
   // Ladda -> Anton 
   // GUstav -> Bookings 
-}
-
-//# "SIDORNA"
-
-async function showMyTickets() {
-  let result = await (await fetch('/json/shows.json')).json();
-
-  let film = result[0];
-
-  console.log(film);
-  $('.mainContent').html(`
-
-    <div class="container bg-dark text-white">
-    <div class="row">
-      <div class="col-md-3 mx-auto">
-              <h1>Your tickets</h1>
-      </div> 
-     </div>
-     <div class="row">
-     
-      <div id="biljetten" class="col-md-6 mt-5 bg-danger text-white text mx-auto">
-              <img src="images/newMovieLogo.svg" alt="Movie Logo" width="45" height="45"
-          class="d-inline-block align-text-top" />
-      <h2 class="text-dark">${film.film}</h2>
-          <h3>Datum/Tid : ${film.time} </h3>
-          <h3>Pris : 70kr </h3>
-          <h3>Antal biljetter : </h3>
-          <h3>Salong : ${film.auditorium} </h3>
-          <p><small class="text-dark">Toalettkod : 5496</small></p>
-      </div >
-     </div >
-    </div >
-  `);
-}
-
-// Methoderna för "sidorna" / hashlinkarna  ---
-// I den här methoden så visas framsidan med posterna.
-function mainPage() {
-  showMoviePosters();
-}
-
-// Klickar man på en film poster så körs den här methoden.
-async function focusMovie(id) {
-  let result = await (await fetch('/json/movies.json')).json();
-
-  if (result.length === 0) {
-    alert.log('An error occurred trying to load movies data.');
-    return;
-  }
-
-  // Här kan man ändra "sidan" när man klickat på en poster och innehållet visas.
-  let film = result[id - 1];
-
-  // Spara sista klickade filmen för booking ref till att
-  // söka efter visningar på booking.
-  //https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh
-  localStorage.setItem('lastMovie', film.title);
-
-  $('.mainContent').html(`
-
-    <div class="container bg-dark text-white">
-    <div class="row">
-      <div class="col-3 me-auto">
-        <img src="/images/Poster-${film.id
-    }.jpg" class="img-fluid d-none d-sm-block">
-      </div>
-      <div class="col-md-7 col-xs-12 me-auto">
-        <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/${film.youtubeTrailers
-    }" title="YouTube video"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 me-md-auto mt-2">
-          <a href="#booking" class="btn btn-danger btn-lg mt-2" role="button" aria-pressed="true">See shows</a>
-        </div>
-        <div class="col-md-7 me-auto mt-md-2">
-          <div class="movieinfo mt-5">
-            <h1>${film.title}</h1>
-            <p>${film.genre.join(', ')} | ${formatTime(film.length)} | Språk: ${film.language
-    } | Text: ${film.subtitles}</p>
-            <div class="description">
-              <p>${film.description}</p>
-            </div>
-            <p>Regi: ${film.director}</p>
-            <p>Skådespelare: ${film.actors.join(', ')}</p>
-            <p>Distributör: ${film.distributor}</p>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        ${displayReviews(film.reviews)}
-      </div>
-    </div>
-    `);
 }
 
 // Some interesting information.
@@ -337,77 +240,6 @@ function formatDate(date) {
 
 
   return [year, month, day].join('-');
-}
-
-function formatTime(minutes) {
-  let timeString = '';
-  let restMinutes = minutes % 60;
-  let hours = (minutes - restMinutes) / 60;
-  timeString =
-    (hours > 0 ? hours + ' tim ' : '') +
-    (restMinutes > 0 ? restMinutes + ' min' : '');
-  return timeString;
-}
-
-function displayReviews(review) {
-  let html = '';
-  for (let i = 0; i < review.length; i++) {
-    html += `<div class="col-md-4"> <div class="d-flex justify-content-center">`;
-    for (let stars = 0; stars < review[i].max; stars++) {
-      if (stars <= review[i].stars - 1) {
-        html += `<img src="/images/icon-star-light.png" class="star">`;
-      } else {
-        html += `<img src="/images/icon-star-grey.png" class="star">`;
-      }
-    }
-    html += `</div> <br> <p class="text-center">"${review[i].quote}"</p> 
-              <p class="text-end">- ${review[i].source}</p> </div>`;
-  }
-  console.log(html);
-  return html;
-}
-
-//# "SIDORNA"
-
-// -----
-
-// Post movies from JSON , kallas även när filmer skall display
-async function showMoviePosters() {
-  // Make a fetch to our namesearch route to get a search result
-  let result = await (await fetch('/json/movies.json')).json();
-  console.log(result);
-  displaySearchResult(result);
-}
-
-// "Framsidans" posters läst från JSON filen movies. En "sub-method" för showMoviePosters()
-async function displaySearchResult(movies) {
-  //alert("displaySearchResult");
-  // If no persons found report that
-  if (movies.length === 0) {
-    alert.log('Err');
-    return;
-  }
-
-  let html = '<div class="container">';
-  html += '<div class="row justify-content-md-center">';
-  let x = 1;
-
-  for (let { id, title, images } of movies) {
-    html += `
-    <div class="col-lg-4 col-md-6 mt-2 gap-3">
-    <a href="#film-${x}">
-    <img style="border: 15px ridge darkred; border-radius: 15px" src="images/Poster-${id}.jpg" alt="" height="400px" width="280px" />
-    </a>
-    </div>
-    `;
-
-    x = x + 1;
-  }
-
-  html += '</div>';
-  html += '</div>';
-
-  $('.mainContent').html(html);
 }
 
 // Thomas event lyssnare från lektionen.
