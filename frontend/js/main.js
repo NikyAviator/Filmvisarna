@@ -44,9 +44,11 @@ function reactOnHashChange() {
 // ANNARS
 // # om objectet inte finns i bookings så skapa det.
 // Tim
-async function processPayment(movieName, auditorium, date, time, selectedSeats) {
-  alert("movieName : " + movieName + " auditorium : " + auditorium + " date : " + date + " time : " + time + " selected Seats " + selectedSeats)
+async function processPayment(showId, seats) {
 
+
+  alert("processPayment " + showId + " seasts " + seats);
+  //alert(showId, seats);
   // Ladda -> Anton 
   // GUstav -> Bookings 
 }
@@ -66,12 +68,13 @@ async function bookingPage() {
 
   let showId = -1;
   let cinemaId = -1;
+  let currentChairs = [];
 
   // Just a WIP idea of how selected seats will be saved. 
   let currentSelectedSeats = [10, 11, 8, 4];
 
   if (localStorage.getItem("lastShowDate") === null) {
-    alert("Error lastShowDate not found in local storage.")
+    //alert("Error lastShowDate not found in local storage.")
     // Should be set todays date - if we havent visited the site 
     // before.
     currentShowDate = "2021-12-1"; // mock date.
@@ -130,7 +133,7 @@ async function bookingPage() {
   let shows = await (await fetch('/json/shows.json')).json();
 
   if (shows.length === 0) {
-    alert.log('No shows ?.');
+    //alert.log('No shows ?.');
     return;
   }
 
@@ -219,16 +222,19 @@ async function bookingPage() {
       }
     }
 
-    if (currentAuditorium != "Err3")
-      bookTicket(cinemaId, showId);
+    bookTicket(cinemaId, showId);
+
+    currentChairs = localStorage.getItem("selectedChairs");
+    alert("currentchairs" + currentChairs);
+
   });
+
 
   // Anton och Gustavs backend del.
   $('#processTicket').on('click', function (e) {
-    let seats = [1, 2, 3, 4, 5, 10];
-    processPayment(currentMovie, currentAuditorium, currentShowDate, currentShowtime, currentSelectedSeats);
+    let seats = currentChairs;
+    processPayment(showId, seats);
   })
-
 }
 
 // Fixed it to reflect JSON structure instead.

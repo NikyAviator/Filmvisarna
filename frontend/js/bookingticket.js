@@ -1,6 +1,7 @@
 
 // Om det finns bookade platser så finns det också ett booking id.
 async function bookTicket(cinemaId, bookingId) {
+
   let shows = await (await fetch('/json/auditoriums.json')).json();
   let bookings = await (await fetch('/json/bookings.json')).json();
 
@@ -13,7 +14,7 @@ async function bookTicket(cinemaId, bookingId) {
   let bio = salong.seatsPerRow;
 
   let busyChairs;
-  //let selected = ["Banana", "Orange", "Apple", "Mango"];
+
   let selected = [];
 
   for (let { showId, seats } of bookings) {
@@ -120,7 +121,7 @@ async function bookTicket(cinemaId, bookingId) {
         if (index > -1) {
           selected.splice(index, 1);
         }
-        alert("EXIST" + val);
+        //alert("EXIST" + val);
         addNew = false;
       }
     }
@@ -135,8 +136,11 @@ async function bookTicket(cinemaId, bookingId) {
         }
     */
     // det anton och gustav skall fylla på.
-    alert("Selected chairs " + selected);
+    // alert("Selected chairs " + selected);
   });
+
+  //alert("BookingTicket selected " + selected);
+  alert("bookingTicket chairs " + selected);
 }
 
 //Här nedan är det Thomas Kod vi fick i samband med uppgiften
