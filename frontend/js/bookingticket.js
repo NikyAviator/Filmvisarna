@@ -2,7 +2,6 @@
 // Om det finns bookade platser så finns det också ett booking id.
 async function bookTicket(cinemaId, bookingId) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
-
   let bookings = await (await fetch('/json/bookings.json')).json();
 
 
@@ -14,44 +13,57 @@ async function bookTicket(cinemaId, bookingId) {
   let bio = salong.seatsPerRow;
 
   let busyChairs;
-
-  // Som sagt kan bli lite rörigt att relatera mellan shows.json och bookings.json
-  // samtidgt. För att se exemplet.
-  // Tryck Spiderman Homecoming. 
-  // Tryck datumet 1 december 2021.
-
-  // Uppgift #1
-  // Niky och jag kommer at göra dessa stolar röda pga 
-  // det är märkta som tagna/ RÖDA i bookings.json etc.
-  // Som sagt de inläggen i bookings.json är tillagda för hand 
-  // och är bara ett exemple. 
-  // ---
-  // Uppgift #2
-  // Spara klickade platser och retunera en array 
-  // med vald platser så de kan sparas i bookings av 
-  // anton och gustav. De skall inte behöva kolla om 
-  // platserna redan är tagna. 
+  //let selected = ["Banana", "Orange", "Apple", "Mango"];
+  let selected = [];
 
   for (let { showId, seats } of bookings) {
     if (showId === bookingId) {
 
       busyChairs = seats;
-      alert("Occupied chairs found." + busyChairs);
+      //alert("Occupied chairs found." + busyChairs);
       break;
     }
   }
 
   let html = '';
-
   let rowLenght = 0;
+  let stolnummer = 0;
+
   // Runs a loop for each row in the auditorium, adds a div for each row
   for (let h = 0; h < bio.length; h++) {
     html += `<div class="row" >`;
     rowLenght = bio[h];
+
     // A nested loop creates all the seats for one row
     for (let x = 0; x < rowLenght; x++) {
-      html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+
+      stolnummer += 1;
+
+      if (busyChairs != null) {
+
+        let canDraw = true;
+
+        for (let count = 0; count < busyChairs.length; count++) {
+
+          if (busyChairs[count] == stolnummer) {
+
+            canDraw = false;
+          }
+        }
+
+        if (canDraw) {
+          html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+        }
+        else {
+
+          html += `<div class="seatOccupied" id="row${h}_seat${x}"></div>`;
+        }
+      }
+      else {
+        html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+      }
     }
+
     html += '</div>';
   }
 
@@ -84,6 +96,46 @@ async function bookTicket(cinemaId, bookingId) {
     } else {
       $(this).removeClass('seatSelected');
     }
+  });
+
+  // Event listener to get row and seat number when we click a seat
+  // https://stackoverflow.com/questions/48239/getting-the-id-of-the-element-that-fired-an-event/48684#48684
+  $('.seat').click(function (event) {
+    // alert(event.target.id);
+
+    let text = $(event.target)[0].id;
+    let x = parseInt(text.charAt(9)) + 1;
+    let y = parseInt(text.charAt(3)) + 1;
+
+    // alert("X " + x + " Y " + y);
+
+    let val = chairNumber(x, y, bio);
+    // alert("VAL" + val);
+
+    let addNew = true;
+
+    for (exist = 0; exist < selected.length; exist++) {
+      if (val == selected[exist]) {
+        const index = selected.indexOf(val);
+        if (index > -1) {
+          selected.splice(index, 1);
+        }
+        alert("EXIST" + val);
+        addNew = false;
+      }
+    }
+
+    if (addNew)
+      selected.push(val);
+
+    /*
+        const index = selected.indexOf(val);
+        if (index > -1) {
+          selected.splice(index, 1);
+        }
+    */
+    // det anton och gustav skall fylla på.
+    alert("Selected chairs " + selected);
   });
 }
 
@@ -166,4 +218,24 @@ function freeSeats(showId) {
   }
 
   return seats;
+}
+
+
+function chairNumber(row, height, layout) {
+
+  // alert 
+  // alert("SDAOKASDOAFJOF" + layout);
+  let stolnummer = 0;
+
+  // Ritar 
+  for (let h = 0; h < layout.length; h++) {
+    for (let x = 0; x < row; x++) {
+      stolnummer += 1;
+
+      if (h == (height - 1) && x == (row - 1)) {
+        alert(stolnummer);
+        return stolnummer;
+      }
+    }
+  }
 }
