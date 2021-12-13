@@ -1,9 +1,7 @@
-
 // Om det finns bookade platser så finns det också ett booking id.
 async function bookTicket(cinemaId, bookingId) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
   let bookings = await (await fetch('/json/bookings.json')).json();
-
 
   if (shows.length === 0) {
     return;
@@ -13,18 +11,21 @@ async function bookTicket(cinemaId, bookingId) {
   let bio = salong.seatsPerRow;
 
   let busyChairs;
+<<<<<<< HEAD
   //let selected = ["Banana", "Orange", "Apple", "Mango"];
   let selected = [];
+=======
+>>>>>>> master
 
   for (let { showId, seats } of bookings) {
     if (showId === bookingId) {
-
       busyChairs = seats;
       //alert("Occupied chairs found." + busyChairs);
       break;
     }
   }
 
+  //alert(busyChairs);
   let html = '';
   let rowLenght = 0;
   let stolnummer = 0;
@@ -36,6 +37,7 @@ async function bookTicket(cinemaId, bookingId) {
 
     // A nested loop creates all the seats for one row
     for (let x = 0; x < rowLenght; x++) {
+<<<<<<< HEAD
 
       stolnummer += 1;
 
@@ -47,12 +49,22 @@ async function bookTicket(cinemaId, bookingId) {
 
           if (busyChairs[count] == stolnummer) {
 
+=======
+      stolnummer += 1;
+
+      if (busyChairs != null) {
+        let canDraw = true;
+
+        for (let count = 0; count < busyChairs.length; count++) {
+          if (busyChairs[count] == stolnummer) {
+>>>>>>> master
             canDraw = false;
           }
         }
 
         if (canDraw) {
           html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+<<<<<<< HEAD
         }
         else {
 
@@ -60,6 +72,12 @@ async function bookTicket(cinemaId, bookingId) {
         }
       }
       else {
+=======
+        } else {
+          html += `<div class="seatOccupied" id="row${h}_seat${x}"></div>`;
+        }
+      } else {
+>>>>>>> master
         html += `<div class="seat" id="row${h}_seat${x}"></div>`;
       }
     }
