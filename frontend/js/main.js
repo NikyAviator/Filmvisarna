@@ -45,13 +45,45 @@ function reactOnHashChange() {
 // # om objectet inte finns i bookings så skapa det.
 // Tim
 async function processPayment(showId, seats) {
+  alert("processPayment " + showId + " seats " + seats);
 
+  let data = await (await fetch('json/bookings.json')).json();
 
-  alert("processPayment " + showId + " seasts " + seats);
+  let booking = data.find(booking => booking.showId === showId);
+
+  console.log(booking);
+
+  if (booking) {
+    for (let seat of seats) {
+      booking.seats.push(seat);
+    }
+  }
+  else {
+    data.push({ "showId": showId, "seats": seats })
+  }
+
+  await JSON._save('bookings', data)
+
   //alert(showId, seats);
   // Ladda -> Anton 
   // GUstav -> Bookings 
 }
+
+async function saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate) {
+  let ticket = await JSON._load('tickets');
+  let newTicket = {
+    movieName: currentMovie,
+    auditorium: currentAuditorium,
+    showTime: currentShowtime,
+    showDate: currentShowDate,
+    seats: seats
+  };
+  alert(newTicket.movieName);
+  newTicket.push(ticket);
+  await JSON._save('tickets', newTicket);
+}
+
+
 
 // Some interesting information.
 // shows - date IS formated 23-12-2021
@@ -232,8 +264,9 @@ async function bookingPage() {
 
   // Anton och Gustavs backend del.
   $('#processTicket').on('click', function (e) {
-    let seats = currentChairs;
+    let seats = [1, 2, 3];
     processPayment(showId, seats);
+    saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate);
   })
 }
 
