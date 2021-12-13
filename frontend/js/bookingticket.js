@@ -251,3 +251,5 @@ async function bookTicket(cinemaId, bookingId) {
         }
       }
     }
+  }
+}
