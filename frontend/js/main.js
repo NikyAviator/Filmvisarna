@@ -79,7 +79,7 @@ async function saveTicket(currentMovie, currentAuditorium, seats, currentShowtim
     seats: seats
   };
   alert(newTicket.movieName);
-  newTicket.push(ticket);
+  ticket.push(newTicket);
   await JSON._save('tickets', newTicket);
 }
 
