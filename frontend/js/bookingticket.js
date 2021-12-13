@@ -1,10 +1,8 @@
-
 // Om det finns bookade platser så finns det också ett booking id.
 async function bookTicket(cinemaId, bookingId) {
   let shows = await (await fetch('/json/auditoriums.json')).json();
 
   let bookings = await (await fetch('/json/bookings.json')).json();
-
 
   if (shows.length === 0) {
     return;
@@ -15,43 +13,47 @@ async function bookTicket(cinemaId, bookingId) {
 
   let busyChairs;
 
-  // Som sagt kan bli lite rörigt att relatera mellan shows.json och bookings.json
-  // samtidgt. För att se exemplet.
-  // Tryck Spiderman Homecoming. 
-  // Tryck datumet 1 december 2021.
-
-  // Uppgift #1
-  // Niky och jag kommer at göra dessa stolar röda pga 
-  // det är märkta som tagna/ RÖDA i bookings.json etc.
-  // Som sagt de inläggen i bookings.json är tillagda för hand 
-  // och är bara ett exemple. 
-  // ---
-  // Uppgift #2
-  // Spara klickade platser och retunera en array 
-  // med vald platser så de kan sparas i bookings av 
-  // anton och gustav. De skall inte behöva kolla om 
-  // platserna redan är tagna. 
-
   for (let { showId, seats } of bookings) {
     if (showId === bookingId) {
-
       busyChairs = seats;
-      alert("Occupied chairs found." + busyChairs);
+      //alert("Occupied chairs found." + busyChairs);
       break;
     }
   }
 
+  //alert(busyChairs);
   let html = '';
-
   let rowLenght = 0;
+  let stolnummer = 0;
+
   // Runs a loop for each row in the auditorium, adds a div for each row
   for (let h = 0; h < bio.length; h++) {
     html += `<div class="row" >`;
     rowLenght = bio[h];
+
     // A nested loop creates all the seats for one row
     for (let x = 0; x < rowLenght; x++) {
-      html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+      stolnummer += 1;
+
+      if (busyChairs != null) {
+        let canDraw = true;
+
+        for (let count = 0; count < busyChairs.length; count++) {
+          if (busyChairs[count] == stolnummer) {
+            canDraw = false;
+          }
+        }
+
+        if (canDraw) {
+          html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+        } else {
+          html += `<div class="seatOccupied" id="row${h}_seat${x}"></div>`;
+        }
+      } else {
+        html += `<div class="seat" id="row${h}_seat${x}"></div>`;
+      }
     }
+
     html += '</div>';
   }
 
