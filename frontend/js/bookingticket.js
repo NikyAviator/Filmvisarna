@@ -32,7 +32,7 @@ async function bookTicket(cinemaId, bookingId) {
 
   // Runs a loop for each row in the auditorium, adds a div for each row
   for (let h = 0; h < bio.length; h++) {
-    html += `<div class="row" >`;
+    html += `<div class="movierow" >`;
     rowLenght = bio[h];
 
     // A nested loop creates all the seats for one row
@@ -67,27 +67,9 @@ async function bookTicket(cinemaId, bookingId) {
 
     html += '</div>';
   }
-
-  $('.biosalong').html(`
-  <div class="container bg-dark text-white">
-
-    <div class="row">
-       
-
-          <div class="screen"></div>
-          
-        
-        <div class="text">
-        <div class="seats">
+  $('#biosalong').html(`
+        <div class="screen"></div>
         ${html}
-        </div>
-        </div>
-
-      </div>
-    
-    </div>
-
-  </div>
 `);
   // Event listener to get row and seat number when we click a seat
   // We can now select seats and deselect them

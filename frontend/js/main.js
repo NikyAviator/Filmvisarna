@@ -140,16 +140,16 @@ async function bookingPage() {
 
 <div class="container bg-dark text-white">
 
-<div class="row no-gutters">
+<div class="row justify-content-evenly">
   <div class="col-12 col-sm-4 col-md-4">
 
     <div class="showingsCalender"> </div>
   <div id="datepicker" data-date="${currentShowDate}"></div>
   </div>
-  <div class="col-6 col-md-4">
+  <div class="col-12 col-md-6 col-lg-4">
 
 
-<div class="biosalong"> </div>
+<div class="d-flex flex-column justify-content-center" id="biosalong"> </div>
 
 </div>
 
@@ -257,7 +257,7 @@ async function bookingPage() {
     bookTicket(cinemaId, showId);
 
     currentChairs = localStorage.getItem("selectedChairs");
-    alert("currentchairs" + currentChairs);
+    //alert("currentchairs" + currentChairs);
 
   });
 
