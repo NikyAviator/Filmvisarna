@@ -29,6 +29,12 @@ function reactOnHashChange() {
   } else if (pageToDisplay.indexOf('book-ticket') === 0) {
     //bookTicket();
     return;
+  } else if (pageToDisplay.indexOf('about') === 0) {
+    aboutPage();
+    return;
+  } else if (pageToDisplay.indexOf('filter') === 0) {
+    filterPage();
+    return;
   }
 
 
