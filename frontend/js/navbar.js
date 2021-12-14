@@ -16,7 +16,7 @@ function drawNavbar() {
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">Om oss</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#show-my-tickets">Show my tickets</a>
@@ -27,3 +27,60 @@ function drawNavbar() {
 </nav>`;
 }
 drawNavbar();
+
+//Function to 
+function reactOnOption() {
+  let pageToShow = location.hash;
+  if (location.hash === '#about') {
+    aboutPage();
+    return;
+  } else if (location.hash === '#filter-movies') {
+    filterPage();
+    return;
+  } 
+}
+//Event lyssnare
+//window.onhashchange = reactOnOption;
+
+function aboutPage() {
+  $('.mainContent').html(`
+  
+    <div class="container bg-dark text-white">
+      <div class="row mt-4">
+        <img src="images/biosnacks.jpeg" alt="Biosnacks" class="img-fluid">
+      </div>
+      <div class="row mt-4">
+        <p>Välkommen till Filmvisarna! Vi är en liten biografkedja med två mysika biografsalonger i Småstad. Vi har rättighet att visa ett antal olika filmer. Se utbud på startsidan. </p>
+      </div>
+      <div class="row mt-4">
+      <h5>BUTIK</h5>
+        <p>Film utan tilltugg går inte. I vår biografsbutik har vi sortiment med popcorn, läsk och flera godsaker för alla smaker! </p>
+      </div>
+      <div class="row mt-4">
+        <h5>PRISER</h5>
+        <p> - Barn: 65kr <br> - Normal: 85kr <br> - Pensionär: 75kr</p>
+      </div>
+      <div class="row mt-4">
+        <h5>CONTACT</h5>
+        <p>Vid frågor mejla oss på: someone@filmvisarna.com</p>
+      </div>
+    </div>
+  `);
+  
+}
+aboutPage();
+/*
+async function filterPage() {
+  let filter = await (await fetch('./json/movies.json')).json();
+  $('.mainContent').html(`
+  
+    <div class="container bg-dark text-white">
+      <div class="row mt-4">
+        <h2>Sara ${filter.id}</h2>
+      </div>
+    </div>
+      `);
+  
+}
+filterPage();*/
+
