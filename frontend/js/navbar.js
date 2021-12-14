@@ -19,9 +19,6 @@ function drawNavbar() {
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tickets</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#show-my-tickets">Show my tickets</a>
             </li>
             <!-- The shopping button-->
