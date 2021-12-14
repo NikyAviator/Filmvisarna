@@ -27,9 +27,9 @@ async function displaySearchResult(movies) {
 
     for (let { id, title, images } of movies) {
         html += `
-      <div class="col-lg-4 col-md-6 mt-2 gap-3">
+      <div class="col-lg-4 col-md-6 mt-2 gap-3 text-center">
       <a href="#film-${x}">
-      <img style="border: 15px ridge darkred; border-radius: 15px" src="images/Poster-${id}.jpg" alt="" height="400px" width="280px" />
+      <img style="border: 25px ridge darkred; border-radius: 15px" src="images/Poster-${id}.jpg" alt="" height="400px" width="280px" />
       </a>
       </div>
       `;
