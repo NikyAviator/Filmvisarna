@@ -19,6 +19,9 @@ function drawNavbar() {
               <a class="nav-link" href="#about">Om oss</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#filter">Filmer</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#show-my-tickets">Show my tickets</a>
             </li>
           </ul>
@@ -28,19 +31,6 @@ function drawNavbar() {
 }
 drawNavbar();
 
-//Function to 
-function reactOnOption() {
-  let pageToShow = location.hash;
-  if (location.hash === '#about') {
-    aboutPage();
-    return;
-  } else if (location.hash === '#filter-movies') {
-    filterPage();
-    return;
-  } 
-}
-//Event lyssnare
-//window.onhashchange = reactOnOption;
 
 function aboutPage() {
   $('.mainContent').html(`
@@ -69,7 +59,7 @@ function aboutPage() {
   
 }
 aboutPage();
-/*
+
 async function filterPage() {
   let filter = await (await fetch('./json/movies.json')).json();
   $('.mainContent').html(`
@@ -82,5 +72,5 @@ async function filterPage() {
       `);
   
 }
-filterPage();*/
+filterPage();
 
