@@ -31,7 +31,6 @@ function drawNavbar() {
 }
 drawNavbar();
 
-
 function aboutPage() {
   $('.mainContent').html(`
   
@@ -56,9 +55,7 @@ function aboutPage() {
       </div>
     </div>
   `);
-  
 }
-aboutPage();
 
 async function filterPage() {
   let filter = await (await fetch('./json/movies.json')).json();
@@ -70,7 +67,4 @@ async function filterPage() {
       </div>
     </div>
       `);
-  
 }
-filterPage();
-
