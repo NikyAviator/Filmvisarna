@@ -71,6 +71,12 @@ async function bookTicket(cinemaId, bookingId) {
         <div class="screen"></div>
         ${html}
 `);
+  $('.seat').hover(function () {
+    $(this).css('background-color', 'rgb(107, 150, 107)');
+  }, function () {
+    if ($(this).attr('class') === 'seat')
+      $(this).css('background-color', '#444451');
+  });
   // Event listener to get row and seat number when we click a seat
   // We can now select seats and deselect them
   $('.seat').click(function (event) {
