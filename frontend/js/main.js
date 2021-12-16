@@ -1,3 +1,4 @@
+
 // Den här method körs varje gång något förändras på sidan. Våran navigering.
 // *
 // Fungerar lite some en "state machine" beronende på string så körs olika methoder.
@@ -43,23 +44,23 @@ function reactOnHashChange() {
 }
 
 
-// För Anton och Gustav backend ! Spara till JSON booking. OBS selectedSeats är
-// en array.
-//
-// # - Om object finns i booking.json fyll på de nya tagna stolplatserna
-// ANNARS
-// # om objectet inte finns i bookings så skapa det.
+// Verkar inte som JSON._save tycker om att man ger dem rena tal / inte strings
+// https://www.w3schools.com/jsref/jsref_tostring_number.asp blir innuit i json
+// Verkar endast gå att skapa ett nytt object men inte fylla på stolar.
 // Tim
+
 async function processPayment(showId, seats) {
+
   alert("processPayment " + showId + " seats " + seats);
 
   let data = await (await fetch('json/bookings.json')).json();
 
   let booking = data.find(booking => booking.showId === showId);
 
-  console.log(booking);
+  // console.log(booking);
 
   if (booking) {
+
     for (let seat of seats) {
       booking.seats.push(seat);
     }
@@ -89,8 +90,6 @@ async function saveTicket(currentMovie, currentAuditorium, seats, currentShowtim
   await JSON._save('tickets', newTicket);
 }
 
-
-
 // Some interesting information.
 // shows - date IS formated 23-12-2021
 // datepicker date IS formated 23/12/2021.
@@ -103,13 +102,9 @@ async function bookingPage() {
   let currentShowDate = "ERR";
   let currentShowtime = "ERR";
 
-
   let showId = -1;
   let cinemaId = -1;
-  let currentChairs = [];
 
-  // Just a WIP idea of how selected seats will be saved. 
-  let currentSelectedSeats = [10, 11, 8, 4];
 
   if (localStorage.getItem("lastShowDate") === null) {
     //alert("Error lastShowDate not found in local storage.")
@@ -133,7 +128,6 @@ async function bookingPage() {
   else {
     currentShowtime = localStorage.getItem("lastShowtime");
   }
-
   if (localStorage.getItem("lastShowId") === null) {
     currentShowtime = -1;
   }
@@ -247,7 +241,7 @@ async function bookingPage() {
         currentAuditorium = auditorium;
         $('#bioSalongOutput').attr('placeholder', auditorium);
 
-        if (currentAuditorium == "Stora Salongen") {
+        if (currentAuditorium.indexOf("Stora Salongen") === 0) {
           cinemaId = 0;
         }
         else {
@@ -260,19 +254,26 @@ async function bookingPage() {
       }
     }
 
-    bookTicket(cinemaId, showId);
-
-    currentChairs = localStorage.getItem("selectedChairs");
-    //alert("currentchairs" + currentChairs);
-
+    selectedChairs = [];
+    selectedChairs = localStorage.getItem("selectedChairs");
+    selectedChairs = bookTicket(cinemaId, showId);
   });
-
 
   // Anton och Gustavs backend del.
   $('#processTicket').on('click', function (e) {
-    let seats = [1, 2, 3];
-    processPayment(showId, seats);
-    saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate);
+    let seats = localStorage.getItem("selectedChairs");
+
+    let myArray = seats.split(",");
+
+    var result = myArray.map(function (x) {
+      return parseInt(x, 10);
+    });
+
+
+    console.log(myArray);
+    alert("ProcessTicket  - > " + result);
+
+    processPayment(showId, result);
   })
 }
 
