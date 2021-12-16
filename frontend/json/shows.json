@@ -4,587 +4,671 @@
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-01",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 2,
     "auditorium": "Lilla Salongen",
     "film": "The Matrix",
     "date": "2021-12-01",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 3,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-01",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 4,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-02",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 5,
     "auditorium": "Lilla Salongen",
     "film": "Shaft",
     "date": "2021-12-02",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 6,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-02",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 7,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-03",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 8,
     "auditorium": "Lilla Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-03",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 9,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-03",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 10,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-04",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 11,
     "auditorium": "Lilla Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-04",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 12,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-04",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 13,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-05",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 14,
     "auditorium": "Lilla Salongen",
     "film": "Total Recall",
     "date": "2021-12-05",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 15,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-05",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 16,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-06",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 17,
     "auditorium": "Lilla Salongen",
     "film": "The Matrix",
     "date": "2021-12-06",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 18,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-06",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 19,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-07",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 20,
     "auditorium": "Lilla Salongen",
     "film": "Shaft",
     "date": "2021-12-07",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 21,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-07",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 22,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-08",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 23,
     "auditorium": "Lilla Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-08",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 24,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-08",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 25,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-09",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 26,
     "auditorium": "Lilla Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-09",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 27,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-09",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 28,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-10",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 29,
     "auditorium": "Lilla Salongen",
     "film": "Total Recall",
     "date": "2021-12-10",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 30,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-10",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 31,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-11",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 32,
     "auditorium": "Lilla Salongen",
     "film": "The Matrix",
     "date": "2021-12-11",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 33,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-11",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 34,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-12",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 35,
     "auditorium": "Lilla Salongen",
     "film": "Shaft",
     "date": "2021-12-12",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 36,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-12",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 37,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-13",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 38,
     "auditorium": "Lilla Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-13",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 39,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-13",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 40,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-14",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 41,
     "auditorium": "Lilla Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-14",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 42,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-14",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 43,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-15",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 44,
     "auditorium": "Lilla Salongen",
     "film": "Total Recall",
     "date": "2021-12-15",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 45,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-15",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 46,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-16",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 47,
     "auditorium": "Lilla Salongen",
     "film": "The Matrix",
     "date": "2021-12-16",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 48,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-16",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 49,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-17",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 50,
     "auditorium": "Lilla Salongen",
     "film": "Shaft",
     "date": "2021-12-17",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 51,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-17",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 52,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-18",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 53,
     "auditorium": "Lilla Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-18",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 54,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-18",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 55,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-19",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 56,
     "auditorium": "Lilla Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-19",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 57,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-19",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 58,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-20",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 59,
     "auditorium": "Lilla Salongen",
     "film": "Total Recall",
     "date": "2021-12-20",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 60,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-20",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 61,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-21",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 62,
     "auditorium": "Lilla Salongen",
     "film": "The Matrix",
     "date": "2021-12-21",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 63,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-21",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 64,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-22",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 65,
     "auditorium": "Lilla Salongen",
     "film": "Shaft",
     "date": "2021-12-22",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 66,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-22",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 67,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-23",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 68,
     "auditorium": "Lilla Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-23",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 69,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-23",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 70,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-24",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 71,
     "auditorium": "Lilla Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-24",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 72,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-24",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 73,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-25",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 74,
     "auditorium": "Lilla Salongen",
     "film": "Total Recall",
     "date": "2021-12-25",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 75,
     "auditorium": "Stora Salongen",
     "film": "Shaft",
     "date": "2021-12-25",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   },
   {
     "id": 76,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-26",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "11 år"
   },
   {
     "id": 77,
     "auditorium": "Lilla Salongen",
     "film": "The Matrix",
     "date": "2021-12-26",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 78,
     "auditorium": "Stora Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-26",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 79,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-27",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 80,
     "auditorium": "Lilla Salongen",
     "film": "Shaft",
     "date": "2021-12-27",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "15 år"
   },
   {
     "id": 81,
     "auditorium": "Stora Salongen",
     "film": "Spiderman Homecoming",
     "date": "2021-12-27",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "11 år"
   },
   {
     "id": 82,
     "auditorium": "Stora Salongen",
     "film": "The Matrix",
     "date": "2021-12-28",
-    "time": "15.00"
+    "time": "15.00",
+    "agegroup": "15 år"
   },
   {
     "id": 83,
     "auditorium": "Lilla Salongen",
     "film": "Captain Marvel",
     "date": "2021-12-28",
-    "time": "18.00"
+    "time": "18.00",
+    "agegroup": "11 år"
   },
   {
     "id": 84,
     "auditorium": "Stora Salongen",
     "film": "Total Recall",
     "date": "2021-12-28",
-    "time": "21.00"
+    "time": "21.00",
+    "agegroup": "15 år"
   }
 ]

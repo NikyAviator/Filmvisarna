@@ -34,6 +34,7 @@ function reactOnHashChange() {
     return;
   } else if (pageToDisplay.indexOf('filter') === 0) {
     filterPage();
+    buildTable();
     return;
   }
 
