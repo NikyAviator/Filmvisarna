@@ -1,4 +1,3 @@
-
 // Den här method körs varje gång något förändras på sidan. Våran navigering.
 // *
 // Fungerar lite some en "state machine" beronende på string så körs olika methoder.
@@ -42,15 +41,13 @@ function reactOnHashChange() {
   window[pageToDisplay]();
 }
 
-
 // Verkar inte som JSON._save tycker om att man ger dem rena tal / inte strings
 // https://www.w3schools.com/jsref/jsref_tostring_number.asp blir innuit i json
 // Verkar endast gå att skapa ett nytt object men inte fylla på stolar.
 // Tim
 
 async function processPayment(showId, seats) {
-
-  alert("processPayment " + showId + " seats " + seats);
+  alert('processPayment ' + showId + ' seats ' + seats);
 
   let data = await (await fetch('json/bookings.json')).json();
 
@@ -59,7 +56,6 @@ async function processPayment(showId, seats) {
   // console.log(booking);
 
   if (booking) {
-
     for (let seat of seats) {
       booking.seats.push(seat);
     }
@@ -101,13 +97,12 @@ async function bookingPage() {
   // Page presistance.
   // saves movies past refresh.
   let currentMovie = localStorage.getItem('lastMovie');
-  let currentAuditorium = "ERR";
-  let currentShowDate = "ERR";
-  let currentShowtime = "ERR";
+  let currentAuditorium = 'ERR';
+  let currentShowDate = 'ERR';
+  let currentShowtime = 'ERR';
 
   let showId = -1;
   let cinemaId = -1;
-
 
   if (localStorage.getItem('lastShowDate') === null) {
     //alert("Error lastShowDate not found in local storage.")
@@ -128,7 +123,7 @@ async function bookingPage() {
   } else {
     currentShowtime = localStorage.getItem('lastShowtime');
   }
-  if (localStorage.getItem("lastShowId") === null) {
+  if (localStorage.getItem('lastShowId') === null) {
     currentShowtime = -1;
   } else {
     currentShowtime = localStorage.getItem('lastShowId');
@@ -151,11 +146,11 @@ async function bookingPage() {
 <div class="d-flex flex-column justify-content-center" id="biosalong"> </div>
 
 </div>
-<label for="customRange2" class="form-label">Vuxen</label>
+<label for="customRange2" class="form-label">Vuxen (0 till 5)</label>
 <input type="range" class="form-range" min="0" max="5" id="customRange2">
-<label for="customRange2" class="form-label">Barn</label>
+<label for="customRange2" class="form-label">Barn (0 till 5)</label>
 <input type="range" class="form-range" min="0" max="5" id="customRange2">
-<label for="customRange2" class="form-label">Senior</label>
+<label for="customRange2" class="form-label">Senior (0 till 5)</label>
 <input type="range" class="form-range" min="0" max="5" id="customRange2">
 <a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
 </div>
@@ -245,7 +240,7 @@ async function bookingPage() {
         currentAuditorium = auditorium;
         $('#bioSalongOutput').attr('placeholder', auditorium);
 
-        if (currentAuditorium.indexOf("Stora Salongen") === 0) {
+        if (currentAuditorium.indexOf('Stora Salongen') === 0) {
           cinemaId = 0;
         } else {
           cinemaId = 1;
@@ -258,26 +253,25 @@ async function bookingPage() {
     }
 
     selectedChairs = [];
-    selectedChairs = localStorage.getItem("selectedChairs");
+    selectedChairs = localStorage.getItem('selectedChairs');
     selectedChairs = bookTicket(cinemaId, showId);
   });
 
   // Anton och Gustavs backend del.
   $('#processTicket').on('click', function (e) {
-    let seats = localStorage.getItem("selectedChairs");
+    let seats = localStorage.getItem('selectedChairs');
 
-    let myArray = seats.split(",");
+    let myArray = seats.split(',');
 
     var result = myArray.map(function (x) {
       return parseInt(x, 10);
     });
 
-
     console.log(myArray);
     // alert("ProcessTicket  - > " + result);
 
     processPayment(showId, result);
-  })
+  });
 }
 
 // Fixed it to reflect JSON structure instead.
