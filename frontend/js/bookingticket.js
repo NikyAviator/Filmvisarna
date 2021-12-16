@@ -32,8 +32,8 @@ async function bookTicket(cinemaId, bookingId) {
     }
   }
 
-  if (busyChairs != null)
-    alert("Occupied chairs found." + busyChairs);
+  //if (busyChairs != null)
+  //alert("Occupied chairs found." + busyChairs);
 
   let html = '';
   let rowLenght = 0;
@@ -99,7 +99,7 @@ async function bookTicket(cinemaId, bookingId) {
   // Event listener to get row and seat number when we click a seat
   // https://stackoverflow.com/questions/48239/getting-the-id-of-the-element-that-fired-an-event/48684#48684
   $('.seat').click(function (event) {
-    alert(event.target.id);
+    // alert(event.target.id);
 
     let text = event.target.id;
 
@@ -109,12 +109,12 @@ async function bookTicket(cinemaId, bookingId) {
     splits[0] = splits[0].replace(/\D/g, '');
     splits[1] = splits[1].replace(/\D/g, '');
 
-    alert("value 1# -> " + splits[0] + " value#2 -> " + splits[1]);
+    // alert("value 1# -> " + splits[0] + " value#2 -> " + splits[1]);
 
     let addNew = true;
 
     // tror bio object inte blivit uppdatera när detta körs
-    alert("Pre chairNumber() -> X : " + parseInt(splits[1]) + " Y : " + parseInt(splits[0]) + " trying to convert to seatnumber");
+    // alert("Pre chairNumber() -> X : " + parseInt(splits[1]) + " Y : " + parseInt(splits[0]) + " trying to convert to seatnumber");
     let val = chairNumber(parseInt(splits[1]), parseInt(splits[0]), auditorium);
     // alert("VALUE IS " + val);
 
@@ -125,7 +125,7 @@ async function bookTicket(cinemaId, bookingId) {
         if (index > -1) {
           selected.splice(index, 1);
         }
-        alert("EXIST" + val);
+        // alert("EXIST" + val);
         addNew = false;
       }
     }
@@ -159,7 +159,7 @@ function chairNumber(row, height, layout) {
 
       if (y == (height) && x == row) {
 
-        alert("Post chairNumber() -> " + stolnummer + " stolnummer");
+        //   alert("Post chairNumber() -> " + stolnummer + " stolnummer");
         return stolnummer;
       }
 
@@ -167,5 +167,5 @@ function chairNumber(row, height, layout) {
     }
   }
 
-  alert("This should never trigger - chairnumber " + stolnummer);
+  alert("Function chairNumber() - This should never trigger - chairnumber " + stolnummer);
 }
