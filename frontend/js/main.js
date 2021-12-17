@@ -31,6 +31,7 @@ function reactOnHashChange() {
     return;
   } else if (pageToDisplay.indexOf('filter') === 0) {
     filterPage();
+    buildTable();
     return;
   }
 
@@ -90,6 +91,9 @@ async function saveTicket(
 // Some interesting information.
 // shows - date IS formated 23-12-2021
 // datepicker date IS formated 23/12/2021.
+// Updates the global cost variable
+
+let totalTicketCost;
 async function bookingPage() {
   // Page presistance.
   // saves movies past refresh.
@@ -144,14 +148,43 @@ async function bookingPage() {
 
 </div>
 <label for="customRange2" class="form-label">Vuxen (0 till 5)</label>
-<input type="range" class="form-range" min="0" max="5" id="customRange2">
+<input type="range" class="form-range" min="0" max="5" id="Vuxen">
+
 <label for="customRange2" class="form-label">Barn (0 till 5)</label>
-<input type="range" class="form-range" min="0" max="5" id="customRange2">
+<input type="range" class="form-range" min="0" max="5" id="Barn">
+
 <label for="customRange2" class="form-label">Senior (0 till 5)</label>
-<input type="range" class="form-range" min="0" max="5" id="customRange2">
+<input type="range" class="form-range" min="0" max="5" id="Senior">
+
 <a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
 </div>
 `);
+
+  // Create a function that stores the slided values.
+
+  let amountVuxen = 0;
+  let amountBarn = 0;
+  let amountSenior = 0;
+  totalTicketCost = 0;
+  function updateTicketCost() {
+    totalTicketCost = amountVuxen + amountBarn + amountSenior;
+  }
+  let sliderVuxen = document.getElementById('Vuxen');
+  let sliderBarn = document.getElementById('Barn');
+  let sliderSenior = document.getElementById('Senior');
+
+  sliderVuxen.onchange = function (event) {
+    amountVuxen = event.target.value * 85;
+    updateTicketCost();
+  };
+  sliderBarn.onchange = function (event) {
+    amountBarn = event.target.value * 65;
+    updateTicketCost();
+  };
+  sliderSenior.onchange = function (event) {
+    amountSenior = event.target.value * 75;
+    updateTicketCost();
+  };
 
   // Debug fält , tas bort innan vi lämnar in.
   $('#movieOutput').attr('placeholder', currentMovie);
