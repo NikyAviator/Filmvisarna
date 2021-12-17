@@ -26,9 +26,6 @@ function reactOnHashChange() {
   } else if (pageToDisplay.indexOf('show-my-tickets') === 0) {
     showMyTickets();
     return;
-  } else if (pageToDisplay.indexOf('book-ticket') === 0) {
-    //bookTicket();
-    return;
   } else if (pageToDisplay.indexOf('about') === 0) {
     aboutPage();
     return;
@@ -83,11 +80,11 @@ async function saveTicket(
     auditorium: currentAuditorium,
     showTime: currentShowtime,
     showDate: currentShowDate,
-    seats: seats,
+    seats: seats
   };
   alert(newTicket.movieName);
   ticket.push(newTicket);
-  await JSON._save('tickets', newTicket);
+  JSON._save('tickets', ticket);
 }
 
 // Some interesting information.
@@ -271,7 +268,10 @@ async function bookingPage() {
     // alert("ProcessTicket  - > " + result);
 
     processPayment(showId, result);
+    saveTicket(
+      currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate);
   });
+
 }
 
 // Fixed it to reflect JSON structure instead.
