@@ -1,9 +1,9 @@
 function drawNavbar() {
   let container = document.getElementById('navbar-header');
-  container.innerHTML = `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  container.innerHTML = `<nav class="navbar navbar-expand-lg mx-auto navbar-dark bg-dark" id="navvis">
       <div class="container-fluid">
       <a class="navbar-brand" href="#">Filmvisarna</a>
-      <img src="images/newMovieLogo.svg" alt="Movie Logo" width="45" height="39"
+      <img id="nav-logo" src="images/newMovieLogo.svg" alt="Movie Logo" width="45" height="39"
         class="d-inline-block align-text-top" />
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -13,7 +13,7 @@ function drawNavbar() {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav m-lg-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#">Hem</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">Om oss</a>
@@ -22,7 +22,7 @@ function drawNavbar() {
               <a class="nav-link" href="#filter">Filmer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#show-my-tickets">Show my tickets</a>
+              <a class="nav-link" href="#show-my-tickets">Visa mina biljetter</a>
             </li>
           </ul>
         </div>

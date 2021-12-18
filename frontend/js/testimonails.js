@@ -10,7 +10,7 @@ function drawTestimonials() {
     <div class="carousel-inner">
       <div class="carousel-item active bg-dark">
         <h2>
-          "Wonderful service and very clean auditorioums, would recommend!"
+          "Underbar service och fräscha salonger. Rekomenderas starkt!"
         </h2>
         <img
           id="anton-pic"
@@ -22,7 +22,7 @@ function drawTestimonials() {
         <em>Anton, Skåne</em>
       </div>
       <div class="carousel-item" style="background-color: #8E806A">
-        <h2>"Wonderful atmospehere and they also sell beer!"</h2>
+        <h2>"Underbar atmosfär! Dom säljer också öl!"</h2>
         <img
           id="niky-pic"
           src="images/Niky-modified.png"
@@ -33,7 +33,7 @@ function drawTestimonials() {
         <em>Niky, Skåne</em>
       </div>
       <div class="carousel-item" style="background-color: #C3B091">
-        <h2>"Amazing staff, good sound and comfy chairs!"</h2>
+        <h2>"Grym personal, bra ljud och sköna stolar!"</h2>
         <img
           id="sara-pic"
           src="images/sara-pic.jpg"
@@ -44,7 +44,7 @@ function drawTestimonials() {
         <em>Sara, Malmö</em>
       </div>
       <div class="carousel-item" style="background-color: #8E806A">
-        <h2>"The atmosphere is electrifying!"</h2>
+        <h2>"Atmosfären är elektrifierande!"</h2>
         <img
           id="gustav-pic"
           src="images/gustav-pic.jpg"
@@ -55,7 +55,7 @@ function drawTestimonials() {
         <em>Gustav, Malmö</em>
       </div>
       <div class="carousel-item" style="background-color: #C3B091">
-        <h2>"I am a legend!"</h2>
+        <h2>"Jag är en legend, även detta stället är legendariskt!"</h2>
         <img
           id="tim-pic"
           src="images/tim.webp"
@@ -63,7 +63,7 @@ function drawTestimonials() {
           height="150px"
           alt="tim-profile"
         />
-        <em>Tim, aka Sydney Barrens, Lund</em>
+        <em>Tim, Lund</em>
       </div>
     </div>
     <button

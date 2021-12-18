@@ -2,29 +2,9 @@
   {
     "movieName": "Spiderman Homecoming",
     "auditorium": "Stora Salongen",
-    "showTime": "15.00",
-    "showDate": "2021-12-16",
-    "seats": "9,10"
-  },
-  {
-    "movieName": "Spiderman Homecoming",
-    "auditorium": "Stora Salongen",
-    "showTime": "15.00",
-    "showDate": "2021-12-16",
-    "seats": "12,13"
-  },
-  {
-    "movieName": "Spiderman Homecoming",
-    "auditorium": "Stora Salongen",
-    "showTime": "15.00",
-    "showDate": "2021-12-16",
-    "seats": "20,21"
-  },
-  {
-    "movieName": "Captain Marvel",
-    "auditorium": "Stora Salongen",
     "showTime": "21.00",
-    "showDate": "2021-12-21",
-    "seats": "1,2,3"
+    "showDate": "2021-12-22",
+    "seats": "1,2",
+    "ticketCost": 150
   }
 ]

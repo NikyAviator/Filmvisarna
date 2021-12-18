@@ -81,7 +81,8 @@ async function saveTicket(
     auditorium: currentAuditorium,
     showTime: currentShowtime,
     showDate: currentShowDate,
-    seats: seats
+    seats: seats,
+    ticketCost: totalTicketCost
   };
   alert(newTicket.movieName);
   ticket.push(newTicket);

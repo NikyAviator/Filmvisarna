@@ -3,7 +3,7 @@ function aboutPage() {
     
       <div class="container bg-dark text-white">
         <div class="row mt-4">
-          <img src="images/biosnacks.jpeg" alt="Biosnacks" class="img-fluid">
+          <img src="images/biosnacks.jpg" alt="Biosnacks" class="img-fluid">
         </div>
         <div class="row mt-4">
           <p>Välkommen till Filmvisarna! Vi är en liten biografkedja med två mysika biografsalonger i Småstad. Vi har rättighet att visa ett antal olika filmer. Se utbud på startsidan. </p>
@@ -17,7 +17,7 @@ function aboutPage() {
           <p> - Barn: 65kr <br> - Normal: 85kr <br> - Pensionär: 75kr</p>
         </div>
         <div class="row mt-4">
-          <h5>CONTACT</h5>
+          <h5>KONTAKT</h5>
           <p>Vid frågor mejla oss på: someone@filmvisarna.com</p>
         </div>
       </div>
