@@ -1,23 +1,23 @@
-// Den här method körs varje gång något förändras på sidan. Våran navigering.
-// *
-// Fungerar lite some en "state machine" beronende på string så körs olika methoder.
-// *
-// OM pageToDisplay === film så har man klickat på en film poster.
-// då kallas focusMovie(filmId);
-// ELSE
+// SPA hashEvent förändring. Istället för anchor fokusering på sidan
+// så körs en function nedan beronded på nykelordet / hashen som
+// skickats. reactOnHashChange() regarar automatiskt.
 function reactOnHashChange() {
+
+  // Ny plats eller gå till mainPage.
   let pageToDisplay = location.hash || 'mainPage';
   pageToDisplay = pageToDisplay.replace('#', '');
 
-  // OM vi klickat på en genererad hashlänk som börjar med
-  // film så sök våran JSON fil
+  // Frigör nykelorder från # tecknet så vi endast söker
+  // efter ord som Film-1 , Film-2. 
   if (pageToDisplay.indexOf('film') === 0) {
     let filmId = +pageToDisplay.split('-')[1];
 
-    // JSON filmer ordning spelar roll de vill säga film är ID 1 etc ...
-    // om det är ett problem så kan vi alltid lägga till ID is JSON struckturen och
-    // söka efter som thomas gjorde
-    // ie let film = movies.find(x => x.id == id);
+    // Här är det olika "states" som sidan kan bli beordrad att 
+    // visa. 
+    //
+    // Pga av filmsidorna är skapade från json så indexeras dem
+    // film-1,film-2 etc. Vart vi kommer fram till är ett slut id
+    // t.ex 1 , 2 ,3 ...
     focusMovie(filmId);
     return;
   } else if (pageToDisplay.indexOf('booking') === 0) {
@@ -35,14 +35,8 @@ function reactOnHashChange() {
     return;
   }
 
-  // ANNARS
   window[pageToDisplay]();
 }
-
-// Verkar inte som JSON._save tycker om att man ger dem rena tal / inte strings
-// https://www.w3schools.com/jsref/jsref_tostring_number.asp blir innuit i json
-// Verkar endast gå att skapa ett nytt object men inte fylla på stolar.
-// Tim
 
 async function processPayment(showId, seats) {
   alert('processPayment ' + showId + ' seats ' + seats);
@@ -62,10 +56,6 @@ async function processPayment(showId, seats) {
   }
 
   await JSON._save('bookings', data);
-
-  //alert(showId, seats);
-  // Ladda -> Anton
-  // GUstav -> Bookings
 }
 
 async function saveTicket(
@@ -73,7 +63,8 @@ async function saveTicket(
   currentAuditorium,
   seats,
   currentShowtime,
-  currentShowDate
+  currentShowDate,
+  currentShowId
 ) {
   let ticket = await JSON._load('tickets');
   let newTicket = {
@@ -82,18 +73,17 @@ async function saveTicket(
     showTime: currentShowtime,
     showDate: currentShowDate,
     seats: seats,
-    ticketCost: totalTicketCost
+    ticketCost: totalTicketCost,
+    showId: currentShowId
   };
   alert(newTicket.movieName);
   ticket.push(newTicket);
   JSON._save('tickets', ticket);
 }
 
-// Some interesting information.
-// shows - date IS formated 23-12-2021
-// datepicker date IS formated 23/12/2021.
-// Updates the global cost variable
 
+// BookingPage är kundens köp översikts information - viktig information som filmens visnings datum i
+// gröna datum samt dagens specifika visnings salong. 
 let totalTicketCost;
 async function bookingPage() {
   // Page presistance.
@@ -106,10 +96,9 @@ async function bookingPage() {
   let showId = -1;
   let cinemaId = -1;
 
+  //skall ändras till sessionStorage. 
   if (localStorage.getItem('lastShowDate') === null) {
-    //alert("Error lastShowDate not found in local storage.")
-    // Should be set todays date - if we havent visited the site
-    // before.
+
     currentShowDate = '2021-12-1'; // mock date.
   } else {
     // It exist - good
@@ -131,7 +120,8 @@ async function bookingPage() {
     currentShowtime = localStorage.getItem('lastShowId');
   }
 
-  // Load our content.
+
+  // Producera innehåll för mainContent baserat på film data.
   $('.mainContent').html(`
 
 <div class="container bg-dark text-white">
@@ -187,10 +177,6 @@ async function bookingPage() {
     updateTicketCost();
   };
 
-  // Debug fält , tas bort innan vi lämnar in.
-  $('#movieOutput').attr('placeholder', currentMovie);
-  $('#bioSalongOutput').attr('placeholder', currentAuditorium);
-  $('#timeOutput').attr('placeholder', currentShowtime);
 
   let shows = await (await fetch('/json/shows.json')).json();
 
@@ -201,8 +187,6 @@ async function bookingPage() {
 
   let sorted = [];
 
-  //bookTicket(cinemaId);
-
   // Film namn efter alla datum till sorted.
   for (let { film, date, auditorium } of shows) {
     if (film.indexOf(currentMovie) === 0) {
@@ -211,9 +195,8 @@ async function bookingPage() {
     }
   }
 
-  let active_dates = sorted;
-
-  // Populerar kalenderns för kundens översyn av vilka datum har
+  // Här skapas en array som skall fyllas på med relvanta
+  // datum för kalendern. 
   $('#datepicker').datepicker({
     format: 'yyyy-mm-dd',
     autoclose: true,
@@ -225,7 +208,7 @@ async function bookingPage() {
       var curr_year = d.getFullYear();
       var formattedDate = curr_year + '-' + curr_month + '-' + curr_date;
 
-      if ($.inArray(formattedDate, active_dates) != -1) {
+      if ($.inArray(formattedDate, sorted) != -1) {
         return {
           classes: 'activeClass',
         };
@@ -234,7 +217,8 @@ async function bookingPage() {
     },
   });
 
-  //Event : Visar bara vart man klickat sist.
+
+  //Event : Visa sal och stols information baserat på datum
   $('#datepicker').on('changeDate', function () {
     let clickedDate = formatDate($('#datepicker').data('datepicker').viewDate);
 
@@ -288,7 +272,7 @@ async function bookingPage() {
     selectedChairs = bookTicket(cinemaId, showId);
   });
 
-  // Anton och Gustavs backend del.
+
   $('#processTicket').on('click', function (e) {
     let seats = localStorage.getItem('selectedChairs');
 
@@ -299,16 +283,15 @@ async function bookingPage() {
     });
 
     console.log(myArray);
-    // alert("ProcessTicket  - > " + result);
 
+    // Anton och Gustavs backend del. /Tim
     processPayment(showId, result);
-    saveTicket(
-      currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate);
+    // Lade till showId här med så att jag kan ta bort stolarna om ticket avbokas - behövs in skrivas ut i "my tickets" showId / Tim
+    saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId);
   });
-
 }
 
-// Fixed it to reflect JSON structure instead.
+// Köpknappens logik
 function formatDate(date) {
   var d = new Date(date),
     month = '' + (d.getMonth() + 1),
