@@ -20,16 +20,14 @@ function filterPage() {
     </div>
       `);
   
-}
-filterPage();
+    buildTable();
+  //Function för att "input" ska läsa inmatning
+  $('#form1').on('keyup', function () {
+    let value = $(this).val();
+    buildTable(value);
+  });
 
-//Function för att "input" ska läsa inmatning
-$('#form1').on('keyup', function () {
-  shows = $(this).val();
-  buildTable(filterValue);
-  console.log('Sara');
-  //console.log('Value: ', shows);
-});
+}
 
 
 //Funktion för att hämta data från JSON och omvandla till tabellrader
@@ -59,26 +57,4 @@ async function buildTable(filterValue = '') {
 }
 buildTable(shows);
 
-
-/*
-//Funktion för att endast visa rader underhållande inmatad value
-function searchInTable() {
-  let input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById('form1')
-  filter = input.value.toUpperCase();
-  table = document.getElementById('myTable')
-  tr = table.getElementsByTagName('tr');
-  
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName('td')[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}*/
 
