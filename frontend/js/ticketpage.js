@@ -95,12 +95,15 @@ async function showMyTickets() {
       //alert("Button " + x);
 
 
-      clearOccupiedChairs(tickets[x].showId, tickets[x].seats);
-      deleteTicket(x)
+      // clearOccupiedChairs(tickets[x].showId, tickets[x].seats);
+      // deleteTicket(x)
+
+      // Fix for waiting on async operations to finish /Tim
+      $.when(clearOccupiedChairs(tickets[x].showId, tickets[x].seats) && deleteTicket(x)).done(function () { location.reload(); });
+
     });
   }
 }
-
 
 async function deleteTicket(ticketId) {
 

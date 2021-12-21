@@ -96,6 +96,12 @@ h2 {
   border-top-right-radius: 10px;
 }
 
+input {
+background-color: rgba(0, 0, 0, 0);
+color: #FFF;
+border: none;
+}
+
 .seatOccupied {
   background-color: red;
   height: 12px;

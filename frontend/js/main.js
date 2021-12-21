@@ -38,7 +38,7 @@ function reactOnHashChange() {
 }
 
 async function processPayment(showId, seats) {
-  alert('processPayment ' + showId + ' seats ' + seats);
+  //alert('processPayment ' + showId + ' seats ' + seats);
 
   let data = await (await fetch('json/bookings.json')).json();
 
@@ -75,7 +75,8 @@ async function saveTicket(
     ticketCost: totalTicketCost,
     showId: currentShowId
   };
-  alert(newTicket.movieName);
+
+  //alert(newTicket.movieName);
   ticket.push(newTicket);
   JSON._save('tickets', ticket);
 }
@@ -119,7 +120,6 @@ async function bookingPage() {
     currentShowtime = localStorage.getItem('lastShowId');
   }
 
-
   // Producera innehåll för mainContent baserat på film data.
   $('.mainContent').html(`
 
@@ -134,17 +134,25 @@ async function bookingPage() {
   <div class="col-12 col-md-6 col-lg-4">
 
 
-<div class="d-flex flex-column justify-content-center" id="biosalong"> </div>
+<div class="d-flex flex-column justify-content-center" id="biosalong">  
+<h2> Välj datum </h2>
+</div>
 
 </div>
-<label for="customRange2" class="form-label">Vuxen (0 till 5)</label>
-<input type="range" class="form-range" min="0" max="5" id="Vuxen">
 
-<label for="customRange2" class="form-label">Barn (0 till 5)</label>
-<input type="range" class="form-range" min="0" max="5" id="Barn">
+<label class="form-label1">Vuxna (0 till 5)</label>
+<input type="range" id="RangeCalc1"  value="0"  name="rangeInput1" min="0" max="5" onchange="updateTextInput('Vuxen',this.value); updateTicketCost();">
+<input type="personInput" id="Vuxen" value="0">
 
-<label for="customRange2" class="form-label">Senior (0 till 5)</label>
-<input type="range" class="form-range" min="0" max="5" id="Senior">
+<label class="form-label2">Barn (0 till 5)</label>
+<input type="range" id="RangeCalc2" value="0"  name="rangeInput2" min="0" max="5" onchange="updateTextInput('Barn',this.value);">
+<input type="personInput" id="Barn" value="0">
+
+<label class="form-label3">Senior (0 till 5)</label>
+<input type="range" id="RangeCalc3" value="0"  name="rangeInput3" min="0" max="5" onchange="updateTextInput('Senior',this.value);">
+<input type="personInput" id="Senior" value="0">
+
+<input type="personInput" id="Price" value="Pris : 0">
 
 <a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
 </div>
@@ -156,26 +164,25 @@ async function bookingPage() {
   let amountBarn = 0;
   let amountSenior = 0;
   totalTicketCost = 0;
+
+
+
   function updateTicketCost() {
-    totalTicketCost = amountVuxen + amountBarn + amountSenior;
+    totalTicketCost = (amountVuxen * 85) + (amountBarn * 65) + (amountSenior * 75);
   }
-  let sliderVuxen = document.getElementById('Vuxen');
-  let sliderBarn = document.getElementById('Barn');
-  let sliderSenior = document.getElementById('Senior');
 
-  sliderVuxen.onchange = function (event) {
-    amountVuxen = event.target.value * 85;
-    updateTicketCost();
-  };
-  sliderBarn.onchange = function (event) {
-    amountBarn = event.target.value * 65;
-    updateTicketCost();
-  };
-  sliderSenior.onchange = function (event) {
-    amountSenior = event.target.value * 75;
-    updateTicketCost();
-  };
+  $('#RangeCalc1, #RangeCalc2, #RangeCalc3').change(function () {
 
+    amountVuxen = parseInt(document.getElementById('Vuxen').value, 10);
+    amountBarn = parseInt(document.getElementById('Barn').value, 10);
+    amountSenior = parseInt(document.getElementById('Senior').value, 10);
+
+    updateTicketCost();
+
+    //alert("Vuxen : " + amountVuxen + " Barn " + amountBarn + " Senior " + amountSenior);
+
+    document.getElementById('Price').value = ("Pris :" + totalTicketCost.toString());
+  });
 
   let shows = await (await fetch('/json/shows.json')).json();
 
@@ -215,7 +222,6 @@ async function bookingPage() {
       return;
     },
   });
-
 
   //Event : Visa sal och stols information baserat på datum
   $('#datepicker').on('changeDate', function () {
@@ -271,7 +277,6 @@ async function bookingPage() {
     selectedChairs = bookTicket(cinemaId, showId);
   });
 
-
   $('#processTicket').on('click', function (e) {
     let seats = localStorage.getItem('selectedChairs');
 
@@ -284,10 +289,20 @@ async function bookingPage() {
     console.log(myArray);
 
     // Anton och Gustavs backend del. /Tim
-    processPayment(showId, result);
+    //processPayment(showId, result);
     // Lade till showId här med så att jag kan ta bort stolarna om ticket avbokas - behövs in skrivas ut i "my tickets" showId / Tim
-    saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId);
+    // saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId);
+
+    // Fix for waiting on async operations to finish /Tim
+    // Before this json changes would not happen if coupled with a refresh.
+    $.when(processPayment(showId, result) && saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId)).done(function () { location.reload(); });
+
   });
+
+}
+
+function updateTextInput(target, val) {
+  document.getElementById(target).value = val;
 }
 
 // Köpknappens logik

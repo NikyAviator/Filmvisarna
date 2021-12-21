@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "showId": 26,
+    "seats": []
+  },
+  {
+    "showId": 54,
+    "seats": []
+  },
+  {
+    "showId": 49,
+    "seats": []
+  },
+  {
+    "showId": 29,
+    "seats": [
+      18,
+      19
+    ]
+  }
+]

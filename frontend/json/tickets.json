@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "movieName": "Total Recall",
+    "auditorium": "Lilla Salongen",
+    "showTime": "18.00",
+    "showDate": "2021-12-10",
+    "seats": "18,19",
+    "ticketCost": 170,
+    "showId": 29
+  }
+]
