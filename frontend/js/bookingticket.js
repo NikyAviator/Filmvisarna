@@ -23,6 +23,9 @@ async function bookTicket(cinemaId, bookingId) {
 
   let selected = [];
 
+
+  let activeSeats = 0;
+
   for (let { showId, seats } of bookings) {
     if (showId === bookingId) {
 
@@ -91,9 +94,13 @@ async function bookTicket(cinemaId, bookingId) {
   $('.seat').click(function (event) {
     if ($(this).attr('class') == 'seat') {
       $(this).addClass('seatSelected');
+      activeSeats += 1;
     } else {
       $(this).removeClass('seatSelected');
+      activeSeats -= 1;
     }
+
+    localStorage.setItem("activeSeats", activeSeats);
   });
 
   // Event listener to get row and seat number when we click a seat
@@ -132,11 +139,11 @@ async function bookTicket(cinemaId, bookingId) {
 
     if (addNew) {
       selected.push(val);
-      localStorage.setItem("selectedChairs", selected);
+
     }
 
-    // alert("bookingticket.js -> " + selected);
-
+    localStorage.setItem("selectedChairs", selected);
+    //alert("bookingticket.js -> " + selected + " selected amount chairs " + selected.length);
   });
 
   //alert("BookingTicket selected " + selected);

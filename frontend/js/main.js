@@ -96,6 +96,8 @@ async function bookingPage() {
   let showId = -1;
   let cinemaId = -1;
 
+  let selectedAmountOfChairs = 0;
+
   //skall ändras till sessionStorage. 
   if (localStorage.getItem('lastShowDate') === null) {
 
@@ -272,31 +274,47 @@ async function bookingPage() {
       }
     }
 
-    selectedChairs = [];
-    selectedChairs = localStorage.getItem('selectedChairs');
-    selectedChairs = bookTicket(cinemaId, showId);
+
+    bookTicket(cinemaId, showId);
   });
 
   $('#processTicket').on('click', function (e) {
+
     let seats = localStorage.getItem('selectedChairs');
 
-    let myArray = seats.split(',');
+    //FIX. Weird quirk of whatever is happing above I cant check seats lenght , even though it parses
+    // the right seats list at purchase , just check tickets. Spooky. / Tim 
 
-    var result = myArray.map(function (x) {
-      return parseInt(x, 10);
-    });
+    // lite last minute bugs vart också om man tog bort en plats att listan 
+    // inte uppdaterades - fixat. 
+    let activeSeats = localStorage.getItem('activeSeats');
 
-    console.log(myArray);
+    let peopleCount = (amountVuxen + amountBarn + amountSenior);
 
-    // Anton och Gustavs backend del. /Tim
-    //processPayment(showId, result);
-    // Lade till showId här med så att jag kan ta bort stolarna om ticket avbokas - behövs in skrivas ut i "my tickets" showId / Tim
-    // saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId);
+    if (activeSeats == peopleCount && peopleCount > 0) {
 
-    // Fix for waiting on async operations to finish /Tim
-    // Before this json changes would not happen if coupled with a refresh.
-    $.when(processPayment(showId, result) && saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId)).done(function () { location.reload(); });
 
+      let myArray = seats.split(',');
+
+      var result = myArray.map(function (x) {
+        return parseInt(x, 10);
+      });
+
+      console.log(myArray);
+
+      // Anton och Gustavs backend del. /Tim
+      //processPayment(showId, result);
+      // Lade till showId här med så att jag kan ta bort stolarna om ticket avbokas - behövs in skrivas ut i "my tickets" showId / Tim
+      // saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId);
+
+      // Fix for waiting on async operations to finish /Tim
+      // Before this json changes would not happen if coupled with a refresh.
+      $.when(processPayment(showId, result) && saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId)).done(function () { location.reload(); });
+
+    }
+    else {
+      alert("Valda antal stol " + activeSeats + " - valt antal personer " + (amountVuxen + amountBarn + amountSenior + " matchar inte."));
+    }
   });
 
 }

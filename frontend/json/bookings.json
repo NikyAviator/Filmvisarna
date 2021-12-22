@@ -1,21 +1,28 @@
 [
   {
-    "showId": 26,
-    "seats": []
-  },
-  {
-    "showId": 54,
-    "seats": []
-  },
-  {
-    "showId": 49,
-    "seats": []
-  },
-  {
     "showId": 29,
     "seats": [
-      18,
-      19
+      17,
+      18
+    ]
+  },
+  {
+    "showId": 27,
+    "seats": []
+  },
+  {
+    "showId": 28,
+    "seats": [
+      31,
+      32
+    ]
+  },
+  {
+    "showId": 46,
+    "seats": [
+      30,
+      31,
+      21
     ]
   }
 ]

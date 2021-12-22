@@ -4,8 +4,26 @@
     "auditorium": "Lilla Salongen",
     "showTime": "18.00",
     "showDate": "2021-12-10",
-    "seats": "18,19",
+    "seats": "17,18",
     "ticketCost": 170,
     "showId": 29
+  },
+  {
+    "movieName": "Captain Marvel",
+    "auditorium": "Stora Salongen",
+    "showTime": "15.00",
+    "showDate": "2021-12-10",
+    "seats": "31,32",
+    "ticketCost": 170,
+    "showId": 28
+  },
+  {
+    "movieName": "Spiderman Homecoming",
+    "auditorium": "Stora Salongen",
+    "showTime": "15.00",
+    "showDate": "2021-12-16",
+    "seats": "30,31,21",
+    "ticketCost": 235,
+    "showId": 46
   }
 ]
