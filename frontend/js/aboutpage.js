@@ -14,7 +14,7 @@ function aboutPage() {
         </div>
         <div class="row mt-4">
           <h5>PRISER</h5>
-          <p> - Barn: 65kr <br> - Normal: 85kr <br> - Pensionär: 75kr</p>
+          <p> - Barn: 65 kr <br> - Normal: 85 kr <br> - Pensionär: 75 kr</p>
         </div>
         <div class="row mt-4">
           <h5>KONTAKT</h5>

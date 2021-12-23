@@ -154,7 +154,7 @@ async function bookingPage() {
 <input type="range" id="RangeCalc3" value="0"  name="rangeInput3" min="0" max="5" onchange="updateTextInput('Senior',this.value);">
 <input type="personInput" id="Senior" value="0">
 
-<input type="personInput" id="Price" value="Pris : 0">
+<input type="personInput" id="Price" value="Pris : 0 kr">
 
 <a class="btn btn-large btn-success" id="processTicket" >Köp biljett</a>
 </div>
@@ -183,7 +183,7 @@ async function bookingPage() {
 
     //alert("Vuxen : " + amountVuxen + " Barn " + amountBarn + " Senior " + amountSenior);
 
-    document.getElementById('Price').value = ("Pris :" + totalTicketCost.toString());
+    document.getElementById('Price').value = ("Pris : " + totalTicketCost.toString() + ' kr');
   });
 
   let shows = await (await fetch('/json/shows.json')).json();
@@ -309,7 +309,7 @@ async function bookingPage() {
 
       // Fix for waiting on async operations to finish /Tim
       // Before this json changes would not happen if coupled with a refresh.
-      $.when(processPayment(showId, result) && saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId)).done(function () { location.reload(); });
+      $.when(processPayment(showId, result) && saveTicket(currentMovie, currentAuditorium, seats, currentShowtime, currentShowDate, showId)).done(function () { alert('Köp Genomfört! Biljetten hittar du under "Visa mina biljetter"'); location.reload(); });
 
     }
     else {

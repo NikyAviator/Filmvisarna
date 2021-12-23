@@ -74,7 +74,7 @@ async function showMyTickets() {
       <h2 class="text-dark">${ticket.movieName}</h2>
           <h3>Datum : ${ticket.showDate} </h3>
           <h3>Tid : ${ticket.showTime} </h3>
-          <h3>Pris : ${ticket.ticketCost}</h3>
+          <h3>Pris : ${ticket.ticketCost} Kr</h3>
           <h3>Platser : ${ticket.seats}</h3>
           <h3>Salong : ${ticket.auditorium} </h3>
           <p><small class="text-dark">Toalettkod : ${getRandomInt()}</small></p>
